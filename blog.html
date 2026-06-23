@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOLAR — Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0b0e14;
+            color: #eef2f8;
+            line-height: 1.6;
+        }
+        a { color: #00d4ff; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            background: rgba(11,14,20,0.92);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 900;
+            color: #fff;
+        }
+        .logo img { height: 36px; width: auto; }
+        .logo span { color: #00d4ff; }
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-links a { color: #8892b0; transition: 0.2s; }
+        .nav-links a:hover { color: #00d4ff; }
+        .nav-links .active { color: #00d4ff; font-weight: 600; }
+        .btn-buy {
+            background: linear-gradient(135deg, #9945FF, #00d4ff);
+            color: #fff !important;
+            padding: 8px 24px;
+            border-radius: 40px;
+            font-weight: 700;
+            transition: 0.2s;
+        }
+        .btn-buy:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(153,69,255,0.3); }
+
+        .lang-switcher { position: relative; display: inline-block; margin-left: 4px; }
+        .lang-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: #eef2f8; padding: 4px 12px; border-radius: 40px; font-size: 12px; cursor: pointer; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 4px; }
+        .lang-btn:hover { background: rgba(153,69,255,0.1); border-color: #9945FF; }
+        .lang-dropdown { position: absolute; top: 120%; right: 0; background: #0b0e14; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 6px 0; min-width: 140px; display: none; z-index: 999; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .lang-dropdown.show { display: block; }
+        .lang-dropdown button { background: none; border: none; color: #8892b0; padding: 6px 18px; width: 100%; text-align: left; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.1s; font-family: inherit; }
+        .lang-dropdown button:hover { background: rgba(153,69,255,0.05); color: #00d4ff; }
+        .lang-dropdown button.active { color: #00d4ff; font-weight: 700; }
+
+        .page-header { text-align: center; padding: 40px 0 20px; }
+        .page-header h1 { font-size: 2.5rem; font-weight: 900; color: #fff; }
+        .page-header h1 span { color: #00d4ff; }
+        .page-header p { color: #8892b0; }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            padding: 20px 0 40px;
+        }
+        .blog-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            padding: 24px;
+            border-radius: 16px;
+            transition: 0.2s;
+        }
+        .blog-card:hover { border-color: #00d4ff; transform: translateY(-4px); }
+        .blog-card .tag {
+            font-size: 0.65rem;
+            font-weight: 600;
+            color: #00d4ff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(0,212,255,0.08);
+            padding: 2px 12px;
+            border-radius: 40px;
+            display: inline-block;
+        }
+        .blog-card h3 {
+            font-size: 1.1rem;
+            margin: 8px 0;
+            color: #fff;
+        }
+        .blog-card p { color: #8892b0; font-size: 0.9rem; }
+        .blog-card img { width: 100%; border-radius: 12px; margin-bottom: 12px; }
+        .blog-card .date { font-size: 0.75rem; color: #5a6488; margin-top: 8px; }
+
+        footer {
+            padding: 30px 0;
+            border-top: 1px solid rgba(255,255,255,0.04);
+            text-align: center;
+            color: #5a6488;
+            font-size: 0.85rem;
+        }
+        footer .links a { color: #8892b0; margin: 0 12px; font-size: 13px; }
+        footer .links a:hover { color: #00d4ff; }
+
+        @media (max-width: 700px) {
+            .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
+            .nav-links { justify-content: center; }
+            .page-header h1 { font-size: 1.8rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="index.html" class="logo">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_logo.png" alt="SOLAR">
+            <span>SOL</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" data-i18n="nav-home">Home</a>
+            <a href="trade.html" data-i18n="nav-trade">Trade</a>
+            <a href="staking.html" data-i18n="nav-staking">Staking</a>
+            <a href="dao.html" data-i18n="nav-dao">DAO</a>
+            <a href="bridge.html" data-i18n="nav-bridge">Bridge</a>
+            <a href="ecosystem.html" data-i18n="nav-ecosystem">Ecosystem</a>
+            <a href="blog.html" class="active" data-i18n="nav-blog">Blog</a>
+            <a href="#" class="btn-buy" data-i18n="nav-buy">Buy SOL</a>
+            <div class="lang-switcher">
+                <button class="lang-btn" id="langToggle">🌐 <span id="currentLangLabel">EN</span></button>
+                <div class="lang-dropdown" id="langDropdown">
+                    <button data-lang="en" class="active">🇬🇧 English</button>
+                    <button data-lang="ru">🇷🇺 Русский</button>
+                    <button data-lang="es">🇪🇸 Español</button>
+                    <button data-lang="fr">🇫🇷 Français</button>
+                    <button data-lang="de">🇩🇪 Deutsch</button>
+                    <button data-lang="zh">🇨🇳 中文</button>
+                    <button data-lang="ja">🇯🇵 日本語</button>
+                    <button data-lang="ko">🇰🇷 한국어</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="page-header">
+        <h1>📰 <span data-i18n="page-title">SOLAR Blog</span></h1>
+        <p data-i18n="page-desc">Latest news, updates, and insights from the SOLAR ecosystem</p>
+    </div>
+
+    <div class="blog-grid">
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/Crypto-Trader-Turns-2-SOL-To-1M-With-This-Token-Whats-Happening-1.webp" alt="Trader turns 2 SOL to 1M">
+            <div class="tag" data-i18n="blog-tag1">Community</div>
+            <h3 data-i18n="blog-title1">Crypto Trader Turns 2 SOL to $1M</h3>
+            <p data-i18n="blog-desc1">How a trader turned 2 SOL into $1M with SOLAR token. The full story.</p>
+            <div class="date">June 23, 2026</div>
+        </div>
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_blog.png" alt="SOLAR Blog">
+            <div class="tag" data-i18n="blog-tag2">Ecosystem</div>
+            <h3 data-i18n="blog-title2">SOLAR Bridge Goes Live</h3>
+            <p data-i18n="blog-desc2">Cross-chain bridge between Solana, Ethereum and BSC is now operational.</p>
+            <div class="date">June 22, 2026</div>
+        </div>
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_%20whitepaper(1).jpg" alt="Whitepaper">
+            <div class="tag" data-i18n="blog-tag3">Whitepaper</div>
+            <h3 data-i18n="blog-title3">SOLAR Whitepaper Released</h3>
+            <p data-i18n="blog-desc3">The official SOLAR whitepaper is now available. Learn about the vision and technology.</p>
+            <div class="date">June 20, 2026</div>
+        </div>
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_jeton.png" alt="SOLAR Token">
+            <div class="tag" data-i18n="blog-tag4">Token</div>
+            <h3 data-i18n="blog-title4">SOL Token Listed on Meteora</h3>
+            <p data-i18n="blog-desc4">SOL is now trading on Meteora with deep liquidity and low fees.</p>
+            <div class="date">June 19, 2026</div>
+        </div>
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_staking.jpg" alt="Staking">
+            <div class="tag" data-i18n="blog-tag5">Staking</div>
+            <h3 data-i18n="blog-title5">Staking Rewards Boosted</h3>
+            <p data-i18n="blog-desc5">APR on SOL staking pools increased to 25.4% for early adopters.</p>
+            <div class="date">June 18, 2026</div>
+        </div>
+        <div class="blog-card">
+            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_night.png" alt="SOL Night">
+            <div class="tag" data-i18n="blog-tag6">Community</div>
+            <h3 data-i18n="blog-title6">12,800 Holders and Growing</h3>
+            <p data-i18n="blog-desc6">SOLAR community reaches new milestone with 12,800+ unique holders.</p>
+            <div class="date">June 17, 2026</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="links">
+            <a href="index.html" data-i18n="nav-home">Home</a>
+            <a href="trade.html" data-i18n="nav-trade">Trade</a>
+            <a href="staking.html" data-i18n="nav-staking">Staking</a>
+            <a href="dao.html" data-i18n="nav-dao">DAO</a>
+            <a href="bridge.html" data-i18n="nav-bridge">Bridge</a>
+            <a href="ecosystem.html" data-i18n="nav-ecosystem">Ecosystem</a>
+            <a href="blog.html" data-i18n="nav-blog">Blog</a>
+        </div>
+        <p>📜 9GS9DoXh5UMacvsDSq33BhYH4s1UNyq3LCXp4pZeK4DP</p>
+        <p style="margin-top:6px;font-size:0.75rem;color:#5a6488;" data-i18n="footer-copy">© 2026 SOLAR Protocol — The Sun of DeFi</p>
+    </div>
+</footer>
+
+<script>
+    // ——— ПЕРЕВОДЧИК (8 ЯЗЫКОВ) ———
+    const translations = {
+        en: {
+            'nav-home': 'Home', 'nav-trade': 'Trade', 'nav-staking': 'Staking',
+            'nav-dao': 'DAO', 'nav-bridge': 'Bridge', 'nav-ecosystem': 'Ecosystem',
+            'nav-blog': 'Blog', 'nav-buy': 'Buy SOL',
+            'page-title': 'SOLAR Blog', 'page-desc': 'Latest news, updates, and insights from the SOLAR ecosystem',
+            'blog-tag1': 'Community', 'blog-title1': 'Crypto Trader Turns 2 SOL to $1M',
+            'blog-desc1': 'How a trader turned 2 SOL into $1M with SOLAR token. The full story.',
+            'blog-tag2': 'Ecosystem', 'blog-title2': 'SOLAR Bridge Goes Live',
+            'blog-desc2': 'Cross-chain bridge between Solana, Ethereum and BSC is now operational.',
+            'blog-tag3': 'Whitepaper', 'blog-title3': 'SOLAR Whitepaper Released',
+            'blog-desc3': 'The official SOLAR whitepaper is now available. Learn about the vision and technology.',
+            'blog-tag4': 'Token', 'blog-title4': 'SOL Token Listed on Meteora',
+            'blog-desc4': 'SOL is now trading on Meteora with deep liquidity and low fees.',
+            'blog-tag5': 'Staking', 'blog-title5': 'Staking Rewards Boosted',
+            'blog-desc5': 'APR on SOL staking pools increased to 25.4% for early adopters.',
+            'blog-tag6': 'Community', 'blog-title6': '12,800 Holders and Growing',
+            'blog-desc6': 'SOLAR community reaches new milestone with 12,800+ unique holders.',
+            'footer-copy': '© 2026 SOLAR Protocol — The Sun of DeFi'
+        },
+        ru: {
+            'nav-home': 'Главная', 'nav-trade': 'Торги', 'nav-staking': 'Стейкинг',
+            'nav-dao': 'Управление', 'nav-bridge': 'Мост', 'nav-ecosystem': 'Экосистема',
+            'nav-blog': 'Блог', 'nav-buy': 'Купить SOL',
+            'page-title': 'Блог SOLAR', 'page-desc': 'Последние новости, обновления и инсайты экосистемы SOLAR',
+            'blog-tag1': 'Сообщество', 'blog-title1': 'Трейдер превратил 2 SOL в $1M',
+            'blog-desc1': 'Как трейдер превратил 2 SOL в $1M с токеном SOLAR. Полная история.',
+            'blog-tag2': 'Экосистема', 'blog-title2': 'Мост SOLAR запущен',
+            'blog-desc2': 'Кросс-чейн мост между Solana, Ethereum и BSC теперь работает.',
+            'blog-tag3': 'Whitepaper', 'blog-title3': 'Опубликован Whitepaper SOLAR',
+            'blog-desc3': 'Официальный Whitepaper SOLAR теперь доступен. Узнайте о видении и технологии.',
+            'blog-tag4': 'Токен', 'blog-title4': 'Токен SOL залистинговывается на Meteora',
+            'blog-desc4': 'SOL теперь торгуется на Meteora с глубокой ликвидностью и низкими комиссиями.',
+            'blog-tag5': 'Стейкинг', 'blog-title5': 'Награды за стейкинг увеличены',
+            'blog-desc5': 'APR на пулах стейкинга SOL увеличен до 25.4% для первых участников.',
+            'blog-tag6': 'Сообщество', 'blog-title6': '12 800 держателей и рост',
+            'blog-desc6': 'Сообщество SOLAR достигло новой отметки — более 12 800 уникальных держателей.',
+            'footer-copy': '© 2026 SOLAR Protocol — Солнце DeFi'
+        }
+    };
+
+    let currentLang = localStorage.getItem('solarLang') || 'en';
+
+    function applyLanguage(lang) {
+        if (!translations[lang]) return;
+        const t = translations[lang];
+        document.documentElement.lang = lang;
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            if (t[key]) {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = t[key];
+                } else {
+                    el.textContent = t[key];
+                }
+            }
+        });
+        document.getElementById('currentLangLabel').textContent = lang.toUpperCase();
+        document.querySelectorAll('.lang-dropdown button').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+        localStorage.setItem('solarLang', lang);
+        currentLang = lang;
+    }
+
+    document.getElementById('langToggle').addEventListener('click', (e) => {
+        e.stopPropagation();
+        document.getElementById('langDropdown').classList.toggle('show');
+    });
+    document.addEventListener('click', () => {
+        document.getElementById('langDropdown').classList.remove('show');
+    });
+    document.querySelectorAll('.lang-dropdown button').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            applyLanguage(btn.dataset.lang);
+            document.getElementById('langDropdown').classList.remove('show');
+        });
+    });
+    applyLanguage(currentLang);
+</script>
+</body>
+</html>
