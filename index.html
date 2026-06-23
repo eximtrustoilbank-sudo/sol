@@ -16,7 +16,6 @@
         a { color: #00d4ff; text-decoration: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
-        /* ——— HEADER ——— */
         header {
             padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -73,23 +72,19 @@
         .lang-dropdown button:hover { background: rgba(153,69,255,0.05); color: #00d4ff; }
         .lang-dropdown button.active { color: #00d4ff; font-weight: 700; }
 
-        /* ——— HERO ——— */
         .hero {
-            padding: 80px 0 60px;
+            padding: 80px 0 40px;
             text-align: center;
             background: linear-gradient(180deg, #0b0e14 0%, #131a24 100%);
             position: relative;
-            overflow: hidden;
         }
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, rgba(153,69,255,0.05) 0%, transparent 70%);
-            pointer-events: none;
+        .hero-video {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 24px;
+            margin: 0 auto 32px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.04);
         }
         .hero h1 {
             font-size: clamp(2.8rem, 8vw, 4.8rem);
@@ -98,8 +93,6 @@
             letter-spacing: -2px;
             margin-bottom: 16px;
             color: #fff;
-            position: relative;
-            z-index: 1;
         }
         .hero h1 .highlight {
             background: linear-gradient(135deg, #9945FF, #00d4ff);
@@ -111,16 +104,12 @@
             color: #8892b0;
             max-width: 600px;
             margin: 0 auto 32px;
-            position: relative;
-            z-index: 1;
         }
         .hero-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
-            position: relative;
-            z-index: 1;
         }
         .btn-primary {
             background: linear-gradient(135deg, #9945FF, #00d4ff);
@@ -148,7 +137,6 @@
         }
         .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: #9945FF; }
 
-        /* ——— STATS HERO ——— */
         .stats-hero {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -177,11 +165,7 @@
             margin-top: 4px;
         }
 
-        /* ——— WHAT'S HAPPENING (как на Solana) ——— */
-        .happening {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
+        .happening { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.04); }
         .happening h2 {
             font-size: 2rem;
             font-weight: 800;
@@ -224,13 +208,7 @@
         }
         .happening-card p { color: #8892b0; font-size: 0.9rem; }
 
-        /* ——— PARTNERS ——— */
-        .partners {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            text-align: center;
-        }
+        .partners { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.04); text-align: center; }
         .partners h2 {
             font-size: 1.6rem;
             font-weight: 800;
@@ -257,12 +235,10 @@
         }
         .partner-item:hover { opacity: 1; color: #fff; }
         .partner-item .icon { font-size: 2rem; }
+        .partner-item img { height: 40px; width: auto; opacity: 0.5; transition: 0.2s; }
+        .partner-item img:hover { opacity: 1; }
 
-        /* ——— PRODUCTS (как у Solana) ——— */
-        .products {
-            padding: 60px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
-        }
+        .products { padding: 60px 0; border-top: 1px solid rgba(255,255,255,0.04); }
         .products h2 {
             text-align: center;
             font-size: 2rem;
@@ -293,8 +269,8 @@
         .product-card .icon { font-size: 2.4rem; margin-bottom: 10px; }
         .product-card h3 { font-size: 1.1rem; margin-bottom: 4px; color: #fff; }
         .product-card p { font-size: 0.9rem; color: #8892b0; }
+        .product-card img { width: 100%; border-radius: 12px; margin-bottom: 12px; }
 
-        /* ——— CONTRACT ——— */
         .contract-box { text-align: center; padding: 20px 0 40px; }
         .contract-box code {
             background: rgba(255,255,255,0.03);
@@ -309,7 +285,6 @@
             max-width: 100%;
         }
 
-        /* ——— FOOTER ——— */
         footer {
             padding: 30px 0;
             border-top: 1px solid rgba(255,255,255,0.04);
@@ -332,6 +307,7 @@
             .products-grid { grid-template-columns: 1fr 1fr; }
             .partners-grid { gap: 20px; }
             .happening-grid { grid-template-columns: 1fr; }
+            .hero-video { border-radius: 16px; }
         }
         @media (max-width: 480px) { .products-grid { grid-template-columns: 1fr; } }
     </style>
@@ -373,6 +349,10 @@
 <!-- HERO -->
 <section class="hero">
     <div class="container">
+        <video class="hero-video" controls poster="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_night.png">
+            <source src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/what%20is%20solana.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
         <h1 data-i18n="hero-title">The <span class="highlight">Sun</span> of DeFi</h1>
         <p data-i18n="hero-desc">Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.</p>
         <div class="hero-buttons">
@@ -400,16 +380,19 @@
                 <div class="tag" data-i18n="happening-tag1">Ecosystem</div>
                 <h3 data-i18n="happening-title1">SOLAR Bridge Goes Live</h3>
                 <p data-i18n="happening-desc1">Cross-chain bridge between Solana, Ethereum and BSC is now operational.</p>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_bridge.jpg" alt="Bridge" style="width:100%;border-radius:12px;margin-top:10px;">
             </div>
             <div class="happening-card">
                 <div class="tag" data-i18n="happening-tag2">Staking</div>
                 <h3 data-i18n="happening-title2">Staking Rewards Boosted</h3>
                 <p data-i18n="happening-desc2">APR on SOL staking pools increased to 25.4% for early adopters.</p>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_staking.jpg" alt="Staking" style="width:100%;border-radius:12px;margin-top:10px;">
             </div>
             <div class="happening-card">
                 <div class="tag" data-i18n="happening-tag3">Community</div>
                 <h3 data-i18n="happening-title3">12,800 Holders and Growing</h3>
                 <p data-i18n="happening-desc3">SOLAR community reaches new milestone with 12,800+ unique holders.</p>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_jeton.png" alt="SOLAR" style="width:100%;border-radius:12px;margin-top:10px;">
             </div>
         </div>
     </div>
@@ -424,6 +407,7 @@
             <div class="partner-item"><span class="icon">💠</span> Ethereum</div>
             <div class="partner-item"><span class="icon">🟡</span> BNB</div>
             <div class="partner-item"><span class="icon">☀️</span> SOLAR</div>
+            <div class="partner-item"><img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_shop.jpg" alt="Shop"></div>
         </div>
     </div>
 </section>
@@ -435,22 +419,22 @@
         <p class="sub" data-i18n="products-sub">Four pillars that make SOL the center of DeFi</p>
         <div class="products-grid">
             <div class="product-card">
-                <div class="icon">📊</div>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_trade.jpg" alt="Trade">
                 <h3 data-i18n="product-trade-title">Trade</h3>
                 <p data-i18n="product-trade-desc">Buy and sell SOL on Meteora with deep liquidity.</p>
             </div>
             <div class="product-card">
-                <div class="icon">🪙</div>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_staking.jpg" alt="Staking">
                 <h3 data-i18n="product-staking-title">Staking</h3>
                 <p data-i18n="product-staking-desc">Lock your SOL and earn passive income with high APR.</p>
             </div>
             <div class="product-card">
-                <div class="icon">🏛️</div>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_defi.jpg" alt="DAO">
                 <h3 data-i18n="product-dao-title">DAO</h3>
                 <p data-i18n="product-dao-desc">Vote on proposals and shape the future of the ecosystem.</p>
             </div>
             <div class="product-card">
-                <div class="icon">🌉</div>
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_bridge.jpg" alt="Bridge">
                 <h3 data-i18n="product-bridge-title">Bridge</h3>
                 <p data-i18n="product-bridge-desc">Move assets between Solana and other networks.</p>
             </div>
@@ -538,7 +522,7 @@
             'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
             'footer-copy': '© 2026 SOLAR Protocol. Создано на Solana.'
         }
-        // es, fr, de, zh, ja, ko — добавьте аналогично, заменив тексты
+        // Для остальных языков (es, fr, de, zh, ja, ko) — добавьте аналогично
     };
 
     let currentLang = localStorage.getItem('solarLang') || 'en';
