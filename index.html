@@ -9,17 +9,17 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Inter', sans-serif;
-            background: #0b0e14;
-            color: #eef2f8;
+            background: #ffffff;
+            color: #1a1a1a;
             line-height: 1.6;
         }
-        a { color: #f5a623; text-decoration: none; }
+        a { color: #4a90e2; text-decoration: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
         header {
             padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.04);
-            background: rgba(11,14,20,0.92);
+            border-bottom: 1px solid #e8ecf0;
+            background: rgba(255,255,255,0.95);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -38,53 +38,50 @@
             gap: 10px;
             font-size: 24px;
             font-weight: 900;
-            color: #fff;
+            color: #1a1a1a;
         }
         .logo img { height: 36px; width: auto; }
-        .logo span { color: #f5a623; }
+        .logo span { color: #4a90e2; }
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
             font-size: 14px;
             font-weight: 500;
         }
-        .nav-links a { color: #8892b0; transition: 0.2s; }
-        .nav-links a:hover { color: #f5a623; }
-        .nav-links .active { color: #f5a623; font-weight: 600; }
+        .nav-links a { color: #4a5568; transition: 0.2s; }
+        .nav-links a:hover { color: #2b6cb0; }
+        .nav-links .active { color: #2b6cb0; font-weight: 600; }
         .btn-buy {
-            background: linear-gradient(135deg, #f5a623, #e08e0b);
-            color: #0b0e14 !important;
+            background: linear-gradient(135deg, #9945FF, #4A90E2);
+            color: #fff !important;
             padding: 8px 24px;
             border-radius: 40px;
             font-weight: 700;
             transition: 0.2s;
         }
-        .btn-buy:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(245,166,35,0.3); }
+        .btn-buy:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(153,69,255,0.3); }
 
         .lang-switcher { position: relative; display: inline-block; margin-left: 4px; }
-        .lang-btn { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); color: #eef2f8; padding: 4px 12px; border-radius: 40px; font-size: 12px; cursor: pointer; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 4px; }
-        .lang-btn:hover { background: rgba(245,166,35,0.1); border-color: #f5a623; }
-        .lang-dropdown { position: absolute; top: 120%; right: 0; background: #0b0e14; border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; padding: 6px 0; min-width: 140px; display: none; z-index: 999; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .lang-btn { background: #f0f2f5; border: 1px solid #e8ecf0; color: #1a1a1a; padding: 4px 12px; border-radius: 40px; font-size: 12px; cursor: pointer; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 4px; }
+        .lang-btn:hover { background: #e8ecf0; border-color: #4a90e2; }
+        .lang-dropdown { position: absolute; top: 120%; right: 0; background: #ffffff; border: 1px solid #e8ecf0; border-radius: 16px; padding: 6px 0; min-width: 140px; display: none; z-index: 999; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
         .lang-dropdown.show { display: block; }
-        .lang-dropdown button { background: none; border: none; color: #8892b0; padding: 6px 18px; width: 100%; text-align: left; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.1s; font-family: inherit; }
-        .lang-dropdown button:hover { background: rgba(245,166,35,0.05); color: #f5a623; }
-        .lang-dropdown button.active { color: #f5a623; font-weight: 700; }
+        .lang-dropdown button { background: none; border: none; color: #4a5568; padding: 6px 18px; width: 100%; text-align: left; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.1s; font-family: inherit; }
+        .lang-dropdown button:hover { background: #f0f4ff; color: #2b6cb0; }
+        .lang-dropdown button.active { color: #4a90e2; font-weight: 700; }
 
         .hero {
             padding: 60px 0 40px;
             text-align: center;
-            background: linear-gradient(180deg, #0b0e14 0%, #131a24 100%);
+            background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
         }
         .hero-image {
             width: 100%;
-            max-width: 900px;
+            max-width: 600px;
             height: auto;
-            border-radius: 24px;
             margin-bottom: 32px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.04);
         }
         .hero h1 {
             font-size: clamp(2.6rem, 7vw, 4.2rem);
@@ -92,12 +89,12 @@
             line-height: 1.05;
             letter-spacing: -2px;
             margin-bottom: 16px;
-            color: #fff;
+            color: #1a1a1a;
         }
-        .hero h1 .highlight { color: #f5a623; }
+        .hero h1 .highlight { color: #4a90e2; }
         .hero p {
             font-size: 1.2rem;
-            color: #8892b0;
+            color: #4a5568;
             max-width: 600px;
             margin: 0 auto 32px;
         }
@@ -108,8 +105,8 @@
             gap: 16px;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #f5a623, #e08e0b);
-            color: #0b0e14 !important;
+            background: linear-gradient(135deg, #9945FF, #4A90E2);
+            color: #fff !important;
             font-weight: 700;
             padding: 14px 44px;
             border-radius: 60px;
@@ -119,11 +116,10 @@
             border: none;
             cursor: pointer;
         }
-        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(245,166,35,0.3); }
+        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(153,69,255,0.3); }
         .btn-secondary {
-            background: rgba(255,255,255,0.04);
-            border: 1px solid rgba(255,255,255,0.08);
-            color: #eef2f8 !important;
+            background: #e8ecf0;
+            color: #1a1a1a !important;
             font-weight: 600;
             padding: 14px 34px;
             border-radius: 60px;
@@ -131,7 +127,7 @@
             transition: 0.2s;
             display: inline-block;
         }
-        .btn-secondary:hover { background: rgba(255,255,255,0.08); border-color: #f5a623; }
+        .btn-secondary:hover { background: #d2d8e0; }
 
         .stats {
             display: grid;
@@ -144,18 +140,18 @@
         .stat-item {
             text-align: center;
             padding: 20px;
-            border: 1px solid rgba(255,255,255,0.04);
+            border: 1px solid #e8ecf0;
             border-radius: 16px;
-            background: rgba(255,255,255,0.02);
+            background: #fafbfc;
         }
         .stat-item .number {
             font-size: 1.6rem;
             font-weight: 800;
-            color: #f5a623;
+            color: #4a90e2;
         }
         .stat-item .label {
             font-size: 0.85rem;
-            color: #8892b0;
+            color: #4a5568;
             margin-top: 4px;
         }
 
@@ -165,49 +161,49 @@
             font-size: 2.2rem;
             font-weight: 800;
             margin-bottom: 8px;
-            color: #fff;
+            color: #1a1a1a;
         }
         .ecosystem .sub {
             text-align: center;
-            color: #8892b0;
+            color: #4a5568;
             max-width: 500px;
             margin: 0 auto 40px;
         }
         .eco-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 24px;
         }
         .eco-card {
-            background: rgba(255,255,255,0.02);
-            border: 1px solid rgba(255,255,255,0.04);
+            background: #fafbfc;
+            border: 1px solid #e8ecf0;
             padding: 28px 20px 24px;
             border-radius: 20px;
             text-align: center;
             transition: 0.25s;
         }
-        .eco-card:hover { border-color: #f5a623; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.2); }
+        .eco-card:hover { border-color: #4a90e2; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
         .eco-card .icon { font-size: 2.4rem; margin-bottom: 10px; }
-        .eco-card h3 { font-size: 1.1rem; margin-bottom: 4px; color: #fff; }
-        .eco-card p { font-size: 0.9rem; color: #8892b0; }
+        .eco-card h3 { font-size: 1.1rem; margin-bottom: 4px; color: #1a1a1a; }
+        .eco-card p { font-size: 0.9rem; color: #4a5568; }
         .eco-card .link-btn {
             display: inline-block;
             margin-top: 12px;
             font-weight: 600;
-            color: #f5a623;
+            color: #4a90e2;
             font-size: 0.9rem;
         }
-        .eco-card .link-btn:hover { color: #e08e0b; }
+        .eco-card .link-btn:hover { color: #2b6cb0; }
 
         .contract-box { text-align: center; padding: 20px 0 40px; }
         .contract-box code {
-            background: rgba(255,255,255,0.03);
+            background: #f0f2f5;
             padding: 10px 24px;
             border-radius: 60px;
             font-family: monospace;
             font-size: 0.85rem;
-            color: #8892b0;
-            border: 1px solid rgba(255,255,255,0.04);
+            color: #1a1a1a;
+            border: 1px solid #e8ecf0;
             display: inline-block;
             word-break: break-all;
             max-width: 100%;
@@ -215,25 +211,24 @@
 
         footer {
             padding: 30px 0;
-            border-top: 1px solid rgba(255,255,255,0.04);
+            border-top: 1px solid #e8ecf0;
             text-align: center;
-            color: #5a6488;
+            color: #4a5568;
             font-size: 0.85rem;
         }
         footer .socials a {
-            color: #8892b0;
+            color: #4a5568;
             margin: 0 14px;
             font-size: 14px;
             transition: 0.2s;
         }
-        footer .socials a:hover { color: #f5a623; }
+        footer .socials a:hover { color: #2b6cb0; }
 
         @media (max-width: 700px) {
             .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
             .nav-links { justify-content: center; }
             .hero h1 { font-size: 2.4rem; }
             .eco-grid { grid-template-columns: 1fr 1fr; }
-            .hero-image { border-radius: 16px; }
         }
         @media (max-width: 480px) { .eco-grid { grid-template-columns: 1fr; } }
     </style>
@@ -252,6 +247,8 @@
             <a href="staking.html" data-i18n="nav-staking">Staking</a>
             <a href="dao.html" data-i18n="nav-dao">DAO</a>
             <a href="bridge.html" data-i18n="nav-bridge">Bridge</a>
+            <a href="ecosystem.html" data-i18n="nav-ecosystem">Ecosystem</a>
+            <a href="blog.html" data-i18n="nav-blog">Blog</a>
             <a href="#" class="btn-buy" data-i18n="nav-buy">Buy SOL</a>
             <div class="lang-switcher">
                 <button class="lang-btn" id="langToggle">🌐 <span id="currentLangLabel">EN</span></button>
@@ -344,7 +341,8 @@
     const translations = {
         en: {
             'nav-home': 'Home', 'nav-trade': 'Trade', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Bridge', 'nav-buy': 'Buy SOL',
+            'nav-dao': 'DAO', 'nav-bridge': 'Bridge', 'nav-ecosystem': 'Ecosystem',
+            'nav-blog': 'Blog', 'nav-buy': 'Buy SOL',
             'hero-title': 'The Sun of DeFi',
             'hero-desc': 'Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.',
             'hero-btn': '🚀 Get SOL', 'hero-btn2': 'Explore',
@@ -366,7 +364,8 @@
         },
         ru: {
             'nav-home': 'Главная', 'nav-trade': 'Торги', 'nav-staking': 'Стейкинг',
-            'nav-dao': 'Управление', 'nav-bridge': 'Мост', 'nav-buy': 'Купить SOL',
+            'nav-dao': 'Управление', 'nav-bridge': 'Мост', 'nav-ecosystem': 'Экосистема',
+            'nav-blog': 'Блог', 'nav-buy': 'Купить SOL',
             'hero-title': 'Солнце DeFi',
             'hero-desc': 'Solar (SOL) — это солнце экосистемы, соединяющее ETH, BNB и Solana. Стейкай, зарабатывай и управляй. Солнце DeFi.',
             'hero-btn': '🚀 Получить SOL', 'hero-btn2': 'Исследовать',
@@ -388,7 +387,8 @@
         },
         es: {
             'nav-home': 'Inicio', 'nav-trade': 'Comerciar', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Puente', 'nav-buy': 'Comprar SOL',
+            'nav-dao': 'DAO', 'nav-bridge': 'Puente', 'nav-ecosystem': 'Ecosistema',
+            'nav-blog': 'Blog', 'nav-buy': 'Comprar SOL',
             'hero-title': 'El Sol de DeFi',
             'hero-desc': 'Solar (SOL) es el sol del ecosistema, conectando ETH, BNB y Solana. Stakea, gana y gobierna. El sol de DeFi.',
             'hero-btn': '🚀 Obtener SOL', 'hero-btn2': 'Explorar',
@@ -410,7 +410,8 @@
         },
         fr: {
             'nav-home': 'Accueil', 'nav-trade': 'Échanger', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Pont', 'nav-buy': 'Acheter SOL',
+            'nav-dao': 'DAO', 'nav-bridge': 'Pont', 'nav-ecosystem': 'Écosystème',
+            'nav-blog': 'Blog', 'nav-buy': 'Acheter SOL',
             'hero-title': 'Le Soleil de DeFi',
             'hero-desc': 'Solar (SOL) est le soleil de l\'écosystème, connectant ETH, BNB et Solana. Stakez, gagnez et gouvernez. Le soleil de DeFi.',
             'hero-btn': '🚀 Obtenir SOL', 'hero-btn2': 'Explorer',
@@ -432,7 +433,8 @@
         },
         de: {
             'nav-home': 'Startseite', 'nav-trade': 'Handeln', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Brücke', 'nav-buy': 'SOL kaufen',
+            'nav-dao': 'DAO', 'nav-bridge': 'Brücke', 'nav-ecosystem': 'Ökosystem',
+            'nav-blog': 'Blog', 'nav-buy': 'SOL kaufen',
             'hero-title': 'Die Sonne von DeFi',
             'hero-desc': 'Solar (SOL) ist die Sonne des Ökosystems, die ETH, BNB und Solana verbindet. Stake, verdiene und verwalte. Die Sonne von DeFi.',
             'hero-btn': '🚀 SOL erhalten', 'hero-btn2': 'Entdecken',
@@ -454,7 +456,8 @@
         },
         zh: {
             'nav-home': '首页', 'nav-trade': '交易', 'nav-staking': '质押',
-            'nav-dao': 'DAO', 'nav-bridge': '跨链桥', 'nav-buy': '购买 SOL',
+            'nav-dao': 'DAO', 'nav-bridge': '跨链桥', 'nav-ecosystem': '生态系统',
+            'nav-blog': '博客', 'nav-buy': '购买 SOL',
             'hero-title': 'DeFi 的太阳',
             'hero-desc': 'Solar (SOL) 是生态系统的太阳，连接 ETH、BNB 和 Solana。质押、赚取和治理。DeFi 的太阳。',
             'hero-btn': '🚀 获取 SOL', 'hero-btn2': '探索',
@@ -476,7 +479,8 @@
         },
         ja: {
             'nav-home': 'ホーム', 'nav-trade': '取引', 'nav-staking': 'ステーキング',
-            'nav-dao': 'DAO', 'nav-bridge': 'ブリッジ', 'nav-buy': 'SOLを購入',
+            'nav-dao': 'DAO', 'nav-bridge': 'ブリッジ', 'nav-ecosystem': 'エコシステム',
+            'nav-blog': 'ブログ', 'nav-buy': 'SOLを購入',
             'hero-title': 'DeFiの太陽',
             'hero-desc': 'Solar (SOL) はエコシステムの太陽であり、ETH、BNB、Solanaを接続します。ステーキング、収益、ガバナンス。DeFiの太陽。',
             'hero-btn': '🚀 SOLを入手', 'hero-btn2': '探索する',
@@ -498,7 +502,8 @@
         },
         ko: {
             'nav-home': '홈', 'nav-trade': '거래', 'nav-staking': '스테이킹',
-            'nav-dao': 'DAO', 'nav-bridge': '브리지', 'nav-buy': 'SOL 구매',
+            'nav-dao': 'DAO', 'nav-bridge': '브리지', 'nav-ecosystem': '생태계',
+            'nav-blog': '블로그', 'nav-buy': 'SOL 구매',
             'hero-title': 'DeFi의 태양',
             'hero-desc': 'Solar (SOL)는 생태계의 태양으로, ETH, BNB 및 Solana를 연결합니다. 스테이킹, 수익, 거버넌스. DeFi의 태양.',
             'hero-btn': '🚀 SOL 받기', 'hero-btn2': '탐색',
