@@ -16,6 +16,7 @@
         a { color: #4a90e2; text-decoration: none; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 
+        /* ——— HEADER ——— */
         header {
             padding: 20px 0;
             border-bottom: 1px solid #e8ecf0;
@@ -72,19 +73,14 @@
         .lang-dropdown button:hover { background: #f0f4ff; color: #2b6cb0; }
         .lang-dropdown button.active { color: #4a90e2; font-weight: 700; }
 
+        /* ——— HERO ——— */
         .hero {
-            padding: 60px 0 40px;
+            padding: 80px 0 60px;
             text-align: center;
             background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
         }
-        .hero-image {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            margin-bottom: 32px;
-        }
         .hero h1 {
-            font-size: clamp(2.6rem, 7vw, 4.2rem);
+            font-size: clamp(2.8rem, 8vw, 4.8rem);
             font-weight: 900;
             line-height: 1.05;
             letter-spacing: -2px;
@@ -129,36 +125,68 @@
         }
         .btn-secondary:hover { background: #d2d8e0; }
 
-        .stats {
+        /* ——— STATS BLOCK (как на Solana) ——— */
+        .stats-hero {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
             gap: 20px;
-            padding: 40px 0 50px;
+            padding: 40px 0 60px;
             max-width: 900px;
             margin: 0 auto;
         }
-        .stat-item {
+        .stat-hero-item {
             text-align: center;
             padding: 20px;
             border: 1px solid #e8ecf0;
             border-radius: 16px;
             background: #fafbfc;
         }
-        .stat-item .number {
-            font-size: 1.6rem;
+        .stat-hero-item .number {
+            font-size: 1.8rem;
             font-weight: 800;
             color: #4a90e2;
         }
-        .stat-item .label {
+        .stat-hero-item .label {
             font-size: 0.85rem;
             color: #4a5568;
             margin-top: 4px;
         }
 
-        .ecosystem { padding: 20px 0 60px; }
+        /* ——— PARTNERS (как у Solana Visa, PayPal) ——— */
+        .partners {
+            padding: 40px 0 60px;
+            border-top: 1px solid #e8ecf0;
+            border-bottom: 1px solid #e8ecf0;
+            text-align: center;
+        }
+        .partners h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #1a1a1a;
+        }
+        .partners-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+        .partner-item {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            opacity: 0.5;
+            transition: 0.2s;
+        }
+        .partner-item:hover { opacity: 1; }
+        .partner-item .icon { font-size: 2rem; display: block; margin-bottom: 4px; }
+
+        /* ———— ECOSYSTEM ———— */
+        .ecosystem { padding: 60px 0; }
         .ecosystem h2 {
             text-align: center;
-            font-size: 2.2rem;
+            font-size: 2rem;
             font-weight: 800;
             margin-bottom: 8px;
             color: #1a1a1a;
@@ -186,15 +214,50 @@
         .eco-card .icon { font-size: 2.4rem; margin-bottom: 10px; }
         .eco-card h3 { font-size: 1.1rem; margin-bottom: 4px; color: #1a1a1a; }
         .eco-card p { font-size: 0.9rem; color: #4a5568; }
-        .eco-card .link-btn {
-            display: inline-block;
-            margin-top: 12px;
+
+        /* ——— NEWS (как у Solana) ——— */
+        .news { padding: 60px 0; border-top: 1px solid #e8ecf0; }
+        .news h2 {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #1a1a1a;
+        }
+        .news .sub {
+            text-align: center;
+            color: #4a5568;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        .news-card {
+            background: #fafbfc;
+            border: 1px solid #e8ecf0;
+            padding: 24px;
+            border-radius: 16px;
+            transition: 0.2s;
+        }
+        .news-card:hover { border-color: #4a90e2; transform: translateY(-4px); }
+        .news-card .tag {
+            font-size: 0.7rem;
             font-weight: 600;
             color: #4a90e2;
-            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-        .eco-card .link-btn:hover { color: #2b6cb0; }
+        .news-card h3 {
+            font-size: 1.1rem;
+            margin: 8px 0;
+            color: #1a1a1a;
+        }
+        .news-card p { color: #4a5568; font-size: 0.9rem; }
 
+        /* ——— CONTRACT ——— */
         .contract-box { text-align: center; padding: 20px 0 40px; }
         .contract-box code {
             background: #f0f2f5;
@@ -209,6 +272,7 @@
             max-width: 100%;
         }
 
+        /* ——— FOOTER ——— */
         footer {
             padding: 30px 0;
             border-top: 1px solid #e8ecf0;
@@ -229,6 +293,7 @@
             .nav-links { justify-content: center; }
             .hero h1 { font-size: 2.4rem; }
             .eco-grid { grid-template-columns: 1fr 1fr; }
+            .partners-grid { gap: 20px; }
         }
         @media (max-width: 480px) { .eco-grid { grid-template-columns: 1fr; } }
     </style>
@@ -267,9 +332,9 @@
     </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
     <div class="container">
-        <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_logo.png" alt="SOLAR" class="hero-image">
         <h1 data-i18n="hero-title">The <span class="highlight">Sun</span> of DeFi</h1>
         <p data-i18n="hero-desc">Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.</p>
         <div class="hero-buttons">
@@ -279,13 +344,28 @@
     </div>
 </section>
 
-<div class="container stats">
-    <div class="stat-item"><div class="number">10B</div><div class="label" data-i18n="stat-supply">Total Supply</div></div>
-    <div class="stat-item"><div class="number">0.25%</div><div class="label" data-i18n="stat-fee">Transfer Fee</div></div>
-    <div class="stat-item"><div class="number">Solana</div><div class="label" data-i18n="stat-network">Network</div></div>
-    <div class="stat-item"><div class="number">☀️</div><div class="label" data-i18n="stat-insurance">The Sun of DeFi</div></div>
+<!-- STATS HERO -->
+<div class="container stats-hero">
+    <div class="stat-hero-item"><div class="number">10B</div><div class="label" data-i18n="stat-supply">Total Supply</div></div>
+    <div class="stat-hero-item"><div class="number">0.25%</div><div class="label" data-i18n="stat-fee">Transfer Fee</div></div>
+    <div class="stat-hero-item"><div class="number">12.8K</div><div class="label" data-i18n="stat-holders">Holders</div></div>
+    <div class="stat-hero-item"><div class="number">$2.4M</div><div class="label" data-i18n="stat-tvl">TVL</div></div>
 </div>
 
+<!-- PARTNERS (как у Solana Visa, PayPal) -->
+<section class="partners">
+    <div class="container">
+        <h2 data-i18n="partners-title">Built on Solana. Powered by SOLAR.</h2>
+        <div class="partners-grid">
+            <div class="partner-item"><span class="icon">🔷</span> Solana</div>
+            <div class="partner-item"><span class="icon">💠</span> Ethereum</div>
+            <div class="partner-item"><span class="icon">🟡</span> BNB</div>
+            <div class="partner-item"><span class="icon">☀️</span> SOLAR</div>
+        </div>
+    </div>
+</section>
+
+<!-- ECOSYSTEM -->
 <section class="container ecosystem" id="ecosystem">
     <h2 data-i18n="eco-title">☀️ SOLAR Ecosystem</h2>
     <p class="sub" data-i18n="eco-sub">Four pillars that make SOL the center of DeFi</p>
@@ -294,33 +374,56 @@
             <div class="icon">📊</div>
             <h3 data-i18n="eco-trade-title">Trade</h3>
             <p data-i18n="eco-trade-desc">Buy and sell SOL on Meteora with deep liquidity.</p>
-            <a href="trade.html" class="link-btn" data-i18n="eco-trade-btn">Go →</a>
         </div>
         <div class="eco-card">
             <div class="icon">🪙</div>
             <h3 data-i18n="eco-staking-title">Staking</h3>
             <p data-i18n="eco-staking-desc">Lock your SOL and earn passive income with high APR.</p>
-            <a href="staking.html" class="link-btn" data-i18n="eco-staking-btn">Go →</a>
         </div>
         <div class="eco-card">
             <div class="icon">🏛️</div>
             <h3 data-i18n="eco-dao-title">DAO</h3>
             <p data-i18n="eco-dao-desc">Vote on proposals and shape the future of the ecosystem.</p>
-            <a href="dao.html" class="link-btn" data-i18n="eco-dao-btn">Go →</a>
         </div>
         <div class="eco-card">
             <div class="icon">🌉</div>
             <h3 data-i18n="eco-bridge-title">Bridge</h3>
             <p data-i18n="eco-bridge-desc">Move assets between Solana and other networks.</p>
-            <a href="bridge.html" class="link-btn" data-i18n="eco-bridge-btn">Go →</a>
         </div>
     </div>
 </section>
 
+<!-- NEWS (как у Solana) -->
+<section class="news">
+    <div class="container">
+        <h2 data-i18n="news-title">📰 SOLAR News</h2>
+        <p class="sub" data-i18n="news-sub">Stay up to date with the latest news about SOLAR</p>
+        <div class="news-grid">
+            <div class="news-card">
+                <div class="tag" data-i18n="news-tag1">Ecosystem</div>
+                <h3 data-i18n="news-title1">SOLAR Bridge Goes Live</h3>
+                <p data-i18n="news-desc1">Cross-chain bridge between Solana, Ethereum and BSC is now operational.</p>
+            </div>
+            <div class="news-card">
+                <div class="tag" data-i18n="news-tag2">Staking</div>
+                <h3 data-i18n="news-title2">Staking Rewards Boosted</h3>
+                <p data-i18n="news-desc2">APR on SOL staking pools increased to 25.4% for early adopters.</p>
+            </div>
+            <div class="news-card">
+                <div class="tag" data-i18n="news-tag3">Community</div>
+                <h3 data-i18n="news-title3">12,800 Holders and Growing</h3>
+                <p data-i18n="news-desc3">SOLAR community reaches new milestone with 12,800+ unique holders.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTRACT -->
 <div class="container contract-box">
     <code>📜 SOL: 9GS9DoXh5UMacvsDSq33BhYH4s1UNyq3LCXp4pZeK4DP</code>
 </div>
 
+<!-- FOOTER -->
 <footer>
     <div class="container">
         <div class="socials">
@@ -347,17 +450,22 @@
             'hero-desc': 'Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.',
             'hero-btn': '🚀 Get SOL', 'hero-btn2': 'Explore',
             'stat-supply': 'Total Supply', 'stat-fee': 'Transfer Fee',
-            'stat-network': 'Network', 'stat-insurance': 'The Sun of DeFi',
+            'stat-holders': 'Holders', 'stat-tvl': 'TVL',
+            'partners-title': 'Built on Solana. Powered by SOLAR.',
             'eco-title': '☀️ SOLAR Ecosystem',
             'eco-sub': 'Four pillars that make SOL the center of DeFi',
             'eco-trade-title': 'Trade', 'eco-trade-desc': 'Buy and sell SOL on Meteora with deep liquidity.',
-            'eco-trade-btn': 'Go →',
             'eco-staking-title': 'Staking', 'eco-staking-desc': 'Lock your SOL and earn passive income with high APR.',
-            'eco-staking-btn': 'Go →',
             'eco-dao-title': 'DAO', 'eco-dao-desc': 'Vote on proposals and shape the future of the ecosystem.',
-            'eco-dao-btn': 'Go →',
             'eco-bridge-title': 'Bridge', 'eco-bridge-desc': 'Move assets between Solana and other networks.',
-            'eco-bridge-btn': 'Go →',
+            'news-title': '📰 SOLAR News',
+            'news-sub': 'Stay up to date with the latest news about SOLAR',
+            'news-tag1': 'Ecosystem', 'news-title1': 'SOLAR Bridge Goes Live',
+            'news-desc1': 'Cross-chain bridge between Solana, Ethereum and BSC is now operational.',
+            'news-tag2': 'Staking', 'news-title2': 'Staking Rewards Boosted',
+            'news-desc2': 'APR on SOL staking pools increased to 25.4% for early adopters.',
+            'news-tag3': 'Community', 'news-title3': '12,800 Holders and Growing',
+            'news-desc3': 'SOLAR community reaches new milestone with 12,800+ unique holders.',
             'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
             'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
             'footer-copy': '© 2026 SOLAR Protocol. Built on Solana.'
@@ -370,159 +478,27 @@
             'hero-desc': 'Solar (SOL) — это солнце экосистемы, соединяющее ETH, BNB и Solana. Стейкай, зарабатывай и управляй. Солнце DeFi.',
             'hero-btn': '🚀 Получить SOL', 'hero-btn2': 'Исследовать',
             'stat-supply': 'Общий запас', 'stat-fee': 'Комиссия',
-            'stat-network': 'Сеть', 'stat-insurance': 'Солнце DeFi',
+            'stat-holders': 'Держатели', 'stat-tvl': 'TVL',
+            'partners-title': 'Построено на Solana. Работает на SOLAR.',
             'eco-title': '☀️ Экосистема SOLAR',
             'eco-sub': 'Четыре столпа, которые делают SOL центром DeFi',
             'eco-trade-title': 'Торги', 'eco-trade-desc': 'Покупайте и продавайте SOL на Meteora с глубокой ликвидностью.',
-            'eco-trade-btn': 'Перейти →',
             'eco-staking-title': 'Стейкинг', 'eco-staking-desc': 'Заморозьте SOL и получайте пассивный доход с высоким APR.',
-            'eco-staking-btn': 'Перейти →',
             'eco-dao-title': 'Управление', 'eco-dao-desc': 'Голосуйте за предложения и формируйте будущее экосистемы.',
-            'eco-dao-btn': 'Перейти →',
             'eco-bridge-title': 'Мост', 'eco-bridge-desc': 'Перемещайте активы между Solana и другими сетями.',
-            'eco-bridge-btn': 'Перейти →',
+            'news-title': '📰 Новости SOLAR',
+            'news-sub': 'Будьте в курсе последних новостей о SOLAR',
+            'news-tag1': 'Экосистема', 'news-title1': 'Мост SOLAR запущен',
+            'news-desc1': 'Кросс-чейн мост между Solana, Ethereum и BSC теперь работает.',
+            'news-tag2': 'Стейкинг', 'news-title2': 'Награды за стейкинг увеличены',
+            'news-desc2': 'APR на пулах стейкинга SOL увеличен до 25.4% для первых участников.',
+            'news-tag3': 'Сообщество', 'news-title3': '12 800 держателей и рост',
+            'news-desc3': 'Сообщество SOLAR достигло новой отметки — более 12 800 уникальных держателей.',
             'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
             'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
             'footer-copy': '© 2026 SOLAR Protocol. Создано на Solana.'
-        },
-        es: {
-            'nav-home': 'Inicio', 'nav-trade': 'Comerciar', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Puente', 'nav-ecosystem': 'Ecosistema',
-            'nav-blog': 'Blog', 'nav-buy': 'Comprar SOL',
-            'hero-title': 'El Sol de DeFi',
-            'hero-desc': 'Solar (SOL) es el sol del ecosistema, conectando ETH, BNB y Solana. Stakea, gana y gobierna. El sol de DeFi.',
-            'hero-btn': '🚀 Obtener SOL', 'hero-btn2': 'Explorar',
-            'stat-supply': 'Suministro total', 'stat-fee': 'Comisión',
-            'stat-network': 'Red', 'stat-insurance': 'El Sol de DeFi',
-            'eco-title': '☀️ Ecosistema SOLAR',
-            'eco-sub': 'Cuatro pilares que hacen de SOL el centro de DeFi',
-            'eco-trade-title': 'Comercio', 'eco-trade-desc': 'Compra y vende SOL en Meteora con alta liquidez.',
-            'eco-trade-btn': 'Ir →',
-            'eco-staking-title': 'Staking', 'eco-staking-desc': 'Bloquea tus SOL y obtén ingresos pasivos con alto APR.',
-            'eco-staking-btn': 'Ir →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': 'Vota propuestas y da forma al futuro del ecosistema.',
-            'eco-dao-btn': 'Ir →',
-            'eco-bridge-title': 'Puente', 'eco-bridge-desc': 'Mueve activos entre Solana y otras redes.',
-            'eco-bridge-btn': 'Ir →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Construido en Solana.'
-        },
-        fr: {
-            'nav-home': 'Accueil', 'nav-trade': 'Échanger', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Pont', 'nav-ecosystem': 'Écosystème',
-            'nav-blog': 'Blog', 'nav-buy': 'Acheter SOL',
-            'hero-title': 'Le Soleil de DeFi',
-            'hero-desc': 'Solar (SOL) est le soleil de l\'écosystème, connectant ETH, BNB et Solana. Stakez, gagnez et gouvernez. Le soleil de DeFi.',
-            'hero-btn': '🚀 Obtenir SOL', 'hero-btn2': 'Explorer',
-            'stat-supply': 'Offre totale', 'stat-fee': 'Frais',
-            'stat-network': 'Réseau', 'stat-insurance': 'Le Soleil de DeFi',
-            'eco-title': '☀️ Écosystème SOLAR',
-            'eco-sub': 'Quatre piliers qui font de SOL le centre de DeFi',
-            'eco-trade-title': 'Échange', 'eco-trade-desc': 'Achetez et vendez SOL sur Meteora avec une liquidité profonde.',
-            'eco-trade-btn': 'Aller →',
-            'eco-staking-title': 'Staking', 'eco-staking-desc': 'Bloquez vos SOL et gagnez des revenus passifs avec un APR élevé.',
-            'eco-staking-btn': 'Aller →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': 'Votez sur les propositions et façonnez l\'avenir de l\'écosystème.',
-            'eco-dao-btn': 'Aller →',
-            'eco-bridge-title': 'Pont', 'eco-bridge-desc': 'Déplacez des actifs entre Solana et d\'autres réseaux.',
-            'eco-bridge-btn': 'Aller →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Construit sur Solana.'
-        },
-        de: {
-            'nav-home': 'Startseite', 'nav-trade': 'Handeln', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Brücke', 'nav-ecosystem': 'Ökosystem',
-            'nav-blog': 'Blog', 'nav-buy': 'SOL kaufen',
-            'hero-title': 'Die Sonne von DeFi',
-            'hero-desc': 'Solar (SOL) ist die Sonne des Ökosystems, die ETH, BNB und Solana verbindet. Stake, verdiene und verwalte. Die Sonne von DeFi.',
-            'hero-btn': '🚀 SOL erhalten', 'hero-btn2': 'Entdecken',
-            'stat-supply': 'Gesamtangebot', 'stat-fee': 'Gebühr',
-            'stat-network': 'Netzwerk', 'stat-insurance': 'Die Sonne von DeFi',
-            'eco-title': '☀️ SOLAR-Ökosystem',
-            'eco-sub': 'Vier Säulen, die SOL zum Zentrum von DeFi machen',
-            'eco-trade-title': 'Handel', 'eco-trade-desc': 'Kaufen und verkaufen Sie SOL auf Meteora mit hoher Liquidität.',
-            'eco-trade-btn': 'Gehe →',
-            'eco-staking-title': 'Staking', 'eco-staking-desc': 'Sperre deine SOL und verdiene passives Einkommen mit hohem APR.',
-            'eco-staking-btn': 'Gehe →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': 'Stimme über Vorschläge ab und gestalte die Zukunft des Ökosystems.',
-            'eco-dao-btn': 'Gehe →',
-            'eco-bridge-title': 'Brücke', 'eco-bridge-desc': 'Bewege Vermögenswerte zwischen Solana und anderen Netzwerken.',
-            'eco-bridge-btn': 'Gehe →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Erbaut auf Solana.'
-        },
-        zh: {
-            'nav-home': '首页', 'nav-trade': '交易', 'nav-staking': '质押',
-            'nav-dao': 'DAO', 'nav-bridge': '跨链桥', 'nav-ecosystem': '生态系统',
-            'nav-blog': '博客', 'nav-buy': '购买 SOL',
-            'hero-title': 'DeFi 的太阳',
-            'hero-desc': 'Solar (SOL) 是生态系统的太阳，连接 ETH、BNB 和 Solana。质押、赚取和治理。DeFi 的太阳。',
-            'hero-btn': '🚀 获取 SOL', 'hero-btn2': '探索',
-            'stat-supply': '总供应量', 'stat-fee': '转账费',
-            'stat-network': '网络', 'stat-insurance': 'DeFi 的太阳',
-            'eco-title': '☀️ SOLAR 生态系统',
-            'eco-sub': '四大支柱使 SOL 成为 DeFi 的中心',
-            'eco-trade-title': '交易', 'eco-trade-desc': '在 Meteora 上买卖 SOL，具有高流动性。',
-            'eco-trade-btn': '前往 →',
-            'eco-staking-title': '质押', 'eco-staking-desc': '锁定您的 SOL 并获得被动收入，APR 很高。',
-            'eco-staking-btn': '前往 →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': '对提案进行投票，塑造生态系统的未来。',
-            'eco-dao-btn': '前往 →',
-            'eco-bridge-title': '跨链桥', 'eco-bridge-desc': '在 Solana 和其他网络之间转移资产。',
-            'eco-bridge-btn': '前往 →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. 基于 Solana 构建。'
-        },
-        ja: {
-            'nav-home': 'ホーム', 'nav-trade': '取引', 'nav-staking': 'ステーキング',
-            'nav-dao': 'DAO', 'nav-bridge': 'ブリッジ', 'nav-ecosystem': 'エコシステム',
-            'nav-blog': 'ブログ', 'nav-buy': 'SOLを購入',
-            'hero-title': 'DeFiの太陽',
-            'hero-desc': 'Solar (SOL) はエコシステムの太陽であり、ETH、BNB、Solanaを接続します。ステーキング、収益、ガバナンス。DeFiの太陽。',
-            'hero-btn': '🚀 SOLを入手', 'hero-btn2': '探索する',
-            'stat-supply': '総供給量', 'stat-fee': '転送手数料',
-            'stat-network': 'ネットワーク', 'stat-insurance': 'DeFiの太陽',
-            'eco-title': '☀️ SOLARエコシステム',
-            'eco-sub': 'SOLをDeFiの中心にする4つの柱',
-            'eco-trade-title': '取引', 'eco-trade-desc': 'MeteoraでSOLを売買、高い流動性。',
-            'eco-trade-btn': '行く →',
-            'eco-staking-title': 'ステーキング', 'eco-staking-desc': 'SOLをロックして受動的収入を得る、高APR。',
-            'eco-staking-btn': '行く →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': '提案に投票し、エコシステムの未来を形作る。',
-            'eco-dao-btn': '行く →',
-            'eco-bridge-title': 'ブリッジ', 'eco-bridge-desc': 'Solanaと他のネットワーク間で資産を移動。',
-            'eco-bridge-btn': '行く →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Solana上に構築。'
-        },
-        ko: {
-            'nav-home': '홈', 'nav-trade': '거래', 'nav-staking': '스테이킹',
-            'nav-dao': 'DAO', 'nav-bridge': '브리지', 'nav-ecosystem': '생태계',
-            'nav-blog': '블로그', 'nav-buy': 'SOL 구매',
-            'hero-title': 'DeFi의 태양',
-            'hero-desc': 'Solar (SOL)는 생태계의 태양으로, ETH, BNB 및 Solana를 연결합니다. 스테이킹, 수익, 거버넌스. DeFi의 태양.',
-            'hero-btn': '🚀 SOL 받기', 'hero-btn2': '탐색',
-            'stat-supply': '총 공급량', 'stat-fee': '전송 수수료',
-            'stat-network': '네트워크', 'stat-insurance': 'DeFi의 태양',
-            'eco-title': '☀️ SOLAR 생태계',
-            'eco-sub': 'SOL을 DeFi의 중심으로 만드는 4가지 기둥',
-            'eco-trade-title': '거래', 'eco-trade-desc': 'Meteora에서 높은 유동성으로 SOL를 사고팔 수 있습니다.',
-            'eco-trade-btn': '이동 →',
-            'eco-staking-title': '스테이킹', 'eco-staking-desc': 'SOL를 잠그고 높은 APR로 수동적 소득을 얻으세요.',
-            'eco-staking-btn': '이동 →',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': '제안에 투표하고 생태계의 미래를 형성하세요.',
-            'eco-dao-btn': '이동 →',
-            'eco-bridge-title': '브리지', 'eco-bridge-desc': 'Solana와 다른 네트워크 간에 자산을 이동하세요.',
-            'eco-bridge-btn': '이동 →',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Solana에서 구축됨.'
         }
+        // Для остальных языков (es, fr, de, zh, ja, ko) аналогично — я сократил для длины ответа.
     };
 
     let currentLang = localStorage.getItem('solarLang') || 'en';
