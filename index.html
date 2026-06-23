@@ -6,21 +6,32 @@
     <title>SOLAR — The Sun of DeFi</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
+            background: #0b0e14;
+            color: #eef2f8;
             line-height: 1.6;
         }
-        a { color: #4a90e2; text-decoration: none; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        a {
+            color: #00d4ff;
+            text-decoration: none;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
         /* ——— HEADER ——— */
         header {
             padding: 20px 0;
-            border-bottom: 1px solid #e8ecf0;
-            background: rgba(255,255,255,0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(11, 14, 20, 0.92);
             backdrop-filter: blur(12px);
             position: sticky;
             top: 0;
@@ -39,10 +50,15 @@
             gap: 10px;
             font-size: 24px;
             font-weight: 900;
-            color: #1a1a1a;
+            color: #fff;
         }
-        .logo img { height: 36px; width: auto; }
-        .logo span { color: #4a90e2; }
+        .logo img {
+            height: 36px;
+            width: auto;
+        }
+        .logo span {
+            color: #00d4ff;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -51,33 +67,96 @@
             font-size: 14px;
             font-weight: 500;
         }
-        .nav-links a { color: #4a5568; transition: 0.2s; }
-        .nav-links a:hover { color: #2b6cb0; }
-        .nav-links .active { color: #2b6cb0; font-weight: 600; }
+        .nav-links a {
+            color: #8892b0;
+            transition: 0.2s;
+        }
+        .nav-links a:hover {
+            color: #00d4ff;
+        }
+        .nav-links .active {
+            color: #00d4ff;
+            font-weight: 600;
+        }
         .btn-buy {
-            background: linear-gradient(135deg, #9945FF, #4A90E2);
+            background: linear-gradient(135deg, #9945FF, #00d4ff);
             color: #fff !important;
             padding: 8px 24px;
             border-radius: 40px;
             font-weight: 700;
             transition: 0.2s;
         }
-        .btn-buy:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(153,69,255,0.3); }
+        .btn-buy:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 30px rgba(153, 69, 255, 0.3);
+        }
 
-        .lang-switcher { position: relative; display: inline-block; margin-left: 4px; }
-        .lang-btn { background: #f0f2f5; border: 1px solid #e8ecf0; color: #1a1a1a; padding: 4px 12px; border-radius: 40px; font-size: 12px; cursor: pointer; font-weight: 600; transition: 0.2s; display: flex; align-items: center; gap: 4px; }
-        .lang-btn:hover { background: #e8ecf0; border-color: #4a90e2; }
-        .lang-dropdown { position: absolute; top: 120%; right: 0; background: #ffffff; border: 1px solid #e8ecf0; border-radius: 16px; padding: 6px 0; min-width: 140px; display: none; z-index: 999; box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
-        .lang-dropdown.show { display: block; }
-        .lang-dropdown button { background: none; border: none; color: #4a5568; padding: 6px 18px; width: 100%; text-align: left; font-size: 12px; font-weight: 500; cursor: pointer; transition: 0.1s; font-family: inherit; }
-        .lang-dropdown button:hover { background: #f0f4ff; color: #2b6cb0; }
-        .lang-dropdown button.active { color: #4a90e2; font-weight: 700; }
+        .lang-switcher {
+            position: relative;
+            display: inline-block;
+            margin-left: 4px;
+        }
+        .lang-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            color: #eef2f8;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 12px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .lang-btn:hover {
+            background: rgba(153, 69, 255, 0.1);
+            border-color: #9945FF;
+        }
+        .lang-dropdown {
+            position: absolute;
+            top: 120%;
+            right: 0;
+            background: #0b0e14;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 6px 0;
+            min-width: 140px;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+        .lang-dropdown.show {
+            display: block;
+        }
+        .lang-dropdown button {
+            background: none;
+            border: none;
+            color: #8892b0;
+            padding: 6px 18px;
+            width: 100%;
+            text-align: left;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: 0.1s;
+            font-family: inherit;
+        }
+        .lang-dropdown button:hover {
+            background: rgba(153, 69, 255, 0.05);
+            color: #00d4ff;
+        }
+        .lang-dropdown button.active {
+            color: #00d4ff;
+            font-weight: 700;
+        }
 
         /* ——— HERO ——— */
         .hero {
             padding: 80px 0 60px;
             text-align: center;
-            background: linear-gradient(180deg, #f7fafc 0%, #ffffff 100%);
+            background: linear-gradient(180deg, #0b0e14 0%, #131a24 100%);
         }
         .hero h1 {
             font-size: clamp(2.8rem, 8vw, 4.8rem);
@@ -85,12 +164,16 @@
             line-height: 1.05;
             letter-spacing: -2px;
             margin-bottom: 16px;
-            color: #1a1a1a;
+            color: #fff;
         }
-        .hero h1 .highlight { color: #4a90e2; }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, #9945FF, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
         .hero p {
             font-size: 1.2rem;
-            color: #4a5568;
+            color: #8892b0;
             max-width: 600px;
             margin: 0 auto 32px;
         }
@@ -101,7 +184,7 @@
             gap: 16px;
         }
         .btn-primary {
-            background: linear-gradient(135deg, #9945FF, #4A90E2);
+            background: linear-gradient(135deg, #9945FF, #00d4ff);
             color: #fff !important;
             font-weight: 700;
             padding: 14px 44px;
@@ -112,10 +195,14 @@
             border: none;
             cursor: pointer;
         }
-        .btn-primary:hover { transform: scale(1.02); box-shadow: 0 8px 30px rgba(153,69,255,0.3); }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 30px rgba(153, 69, 255, 0.3);
+        }
         .btn-secondary {
-            background: #e8ecf0;
-            color: #1a1a1a !important;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #eef2f8 !important;
             font-weight: 600;
             padding: 14px 34px;
             border-radius: 60px;
@@ -123,9 +210,12 @@
             transition: 0.2s;
             display: inline-block;
         }
-        .btn-secondary:hover { background: #d2d8e0; }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: #9945FF;
+        }
 
-        /* ——— STATS BLOCK (как на Solana) ——— */
+        /* ——— STATS HERO ——— */
         .stats-hero {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -137,33 +227,35 @@
         .stat-hero-item {
             text-align: center;
             padding: 20px;
-            border: 1px solid #e8ecf0;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             border-radius: 16px;
-            background: #fafbfc;
+            background: rgba(255, 255, 255, 0.02);
         }
         .stat-hero-item .number {
             font-size: 1.8rem;
             font-weight: 800;
-            color: #4a90e2;
+            background: linear-gradient(135deg, #9945FF, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .stat-hero-item .label {
             font-size: 0.85rem;
-            color: #4a5568;
+            color: #8892b0;
             margin-top: 4px;
         }
 
-        /* ——— PARTNERS (как у Solana Visa, PayPal) ——— */
+        /* ——— PARTNERS ——— */
         .partners {
             padding: 40px 0 60px;
-            border-top: 1px solid #e8ecf0;
-            border-bottom: 1px solid #e8ecf0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
         }
         .partners h2 {
             font-size: 1.6rem;
             font-weight: 800;
             margin-bottom: 24px;
-            color: #1a1a1a;
+            color: #fff;
         }
         .partners-grid {
             display: flex;
@@ -175,25 +267,34 @@
         .partner-item {
             font-size: 1.2rem;
             font-weight: 700;
-            color: #1a1a1a;
-            opacity: 0.5;
+            color: #8892b0;
+            opacity: 0.6;
             transition: 0.2s;
         }
-        .partner-item:hover { opacity: 1; }
-        .partner-item .icon { font-size: 2rem; display: block; margin-bottom: 4px; }
+        .partner-item:hover {
+            opacity: 1;
+            color: #fff;
+        }
+        .partner-item .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 4px;
+        }
 
-        /* ———— ECOSYSTEM ———— */
-        .ecosystem { padding: 60px 0; }
+        /* ——— ECOSYSTEM ——— */
+        .ecosystem {
+            padding: 60px 0;
+        }
         .ecosystem h2 {
             text-align: center;
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 8px;
-            color: #1a1a1a;
+            color: #fff;
         }
         .ecosystem .sub {
             text-align: center;
-            color: #4a5568;
+            color: #8892b0;
             max-width: 500px;
             margin: 0 auto 40px;
         }
@@ -203,30 +304,47 @@
             gap: 24px;
         }
         .eco-card {
-            background: #fafbfc;
-            border: 1px solid #e8ecf0;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             padding: 28px 20px 24px;
             border-radius: 20px;
             text-align: center;
             transition: 0.25s;
         }
-        .eco-card:hover { border-color: #4a90e2; transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
-        .eco-card .icon { font-size: 2.4rem; margin-bottom: 10px; }
-        .eco-card h3 { font-size: 1.1rem; margin-bottom: 4px; color: #1a1a1a; }
-        .eco-card p { font-size: 0.9rem; color: #4a5568; }
+        .eco-card:hover {
+            border-color: #9945FF;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+        }
+        .eco-card .icon {
+            font-size: 2.4rem;
+            margin-bottom: 10px;
+        }
+        .eco-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+            color: #fff;
+        }
+        .eco-card p {
+            font-size: 0.9rem;
+            color: #8892b0;
+        }
 
-        /* ——— NEWS (как у Solana) ——— */
-        .news { padding: 60px 0; border-top: 1px solid #e8ecf0; }
+        /* ——— NEWS ——— */
+        .news {
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+        }
         .news h2 {
             text-align: center;
             font-size: 2rem;
             font-weight: 800;
             margin-bottom: 8px;
-            color: #1a1a1a;
+            color: #fff;
         }
         .news .sub {
             text-align: center;
-            color: #4a5568;
+            color: #8892b0;
             max-width: 500px;
             margin: 0 auto 40px;
         }
@@ -236,37 +354,46 @@
             gap: 24px;
         }
         .news-card {
-            background: #fafbfc;
-            border: 1px solid #e8ecf0;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.04);
             padding: 24px;
             border-radius: 16px;
             transition: 0.2s;
         }
-        .news-card:hover { border-color: #4a90e2; transform: translateY(-4px); }
+        .news-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-4px);
+        }
         .news-card .tag {
             font-size: 0.7rem;
             font-weight: 600;
-            color: #4a90e2;
+            color: #00d4ff;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
         .news-card h3 {
             font-size: 1.1rem;
             margin: 8px 0;
-            color: #1a1a1a;
+            color: #fff;
         }
-        .news-card p { color: #4a5568; font-size: 0.9rem; }
+        .news-card p {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
 
         /* ——— CONTRACT ——— */
-        .contract-box { text-align: center; padding: 20px 0 40px; }
+        .contract-box {
+            text-align: center;
+            padding: 20px 0 40px;
+        }
         .contract-box code {
-            background: #f0f2f5;
+            background: rgba(255, 255, 255, 0.03);
             padding: 10px 24px;
             border-radius: 60px;
             font-family: monospace;
             font-size: 0.85rem;
-            color: #1a1a1a;
-            border: 1px solid #e8ecf0;
+            color: #8892b0;
+            border: 1px solid rgba(255, 255, 255, 0.04);
             display: inline-block;
             word-break: break-all;
             max-width: 100%;
@@ -275,271 +402,335 @@
         /* ——— FOOTER ——— */
         footer {
             padding: 30px 0;
-            border-top: 1px solid #e8ecf0;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             text-align: center;
-            color: #4a5568;
+            color: #5a6488;
             font-size: 0.85rem;
         }
         footer .socials a {
-            color: #4a5568;
+            color: #8892b0;
             margin: 0 14px;
             font-size: 14px;
             transition: 0.2s;
         }
-        footer .socials a:hover { color: #2b6cb0; }
+        footer .socials a:hover {
+            color: #00d4ff;
+        }
 
         @media (max-width: 700px) {
-            .header-inner { flex-direction: column; align-items: stretch; text-align: center; }
-            .nav-links { justify-content: center; }
-            .hero h1 { font-size: 2.4rem; }
-            .eco-grid { grid-template-columns: 1fr 1fr; }
-            .partners-grid { gap: 20px; }
+            .header-inner {
+                flex-direction: column;
+                align-items: stretch;
+                text-align: center;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .eco-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .partners-grid {
+                gap: 20px;
+            }
         }
-        @media (max-width: 480px) { .eco-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 480px) {
+            .eco-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="container header-inner">
-        <a href="index.html" class="logo">
-            <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_logo.png" alt="SOLAR">
-            <span>SOL</span>
-        </a>
-        <div class="nav-links">
-            <a href="index.html" class="active" data-i18n="nav-home">Home</a>
-            <a href="trade.html" data-i18n="nav-trade">Trade</a>
-            <a href="staking.html" data-i18n="nav-staking">Staking</a>
-            <a href="dao.html" data-i18n="nav-dao">DAO</a>
-            <a href="bridge.html" data-i18n="nav-bridge">Bridge</a>
-            <a href="ecosystem.html" data-i18n="nav-ecosystem">Ecosystem</a>
-            <a href="blog.html" data-i18n="nav-blog">Blog</a>
-            <a href="#" class="btn-buy" data-i18n="nav-buy">Buy SOL</a>
-            <div class="lang-switcher">
-                <button class="lang-btn" id="langToggle">🌐 <span id="currentLangLabel">EN</span></button>
-                <div class="lang-dropdown" id="langDropdown">
-                    <button data-lang="en" class="active">🇬🇧 English</button>
-                    <button data-lang="ru">🇷🇺 Русский</button>
-                    <button data-lang="es">🇪🇸 Español</button>
-                    <button data-lang="fr">🇫🇷 Français</button>
-                    <button data-lang="de">🇩🇪 Deutsch</button>
-                    <button data-lang="zh">🇨🇳 中文</button>
-                    <button data-lang="ja">🇯🇵 日本語</button>
-                    <button data-lang="ko">🇰🇷 한국어</button>
+    <header>
+        <div class="container header-inner">
+            <a href="index.html" class="logo">
+                <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_logo.png" alt="SOLAR">
+                <span>SOL</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" class="active" data-i18n="nav-home">Home</a>
+                <a href="trade.html" data-i18n="nav-trade">Trade</a>
+                <a href="staking.html" data-i18n="nav-staking">Staking</a>
+                <a href="dao.html" data-i18n="nav-dao">DAO</a>
+                <a href="bridge.html" data-i18n="nav-bridge">Bridge</a>
+                <a href="ecosystem.html" data-i18n="nav-ecosystem">Ecosystem</a>
+                <a href="blog.html" data-i18n="nav-blog">Blog</a>
+                <a href="#" class="btn-buy" data-i18n="nav-buy">Buy SOL</a>
+                <div class="lang-switcher">
+                    <button class="lang-btn" id="langToggle">🌐 <span id="currentLangLabel">EN</span></button>
+                    <div class="lang-dropdown" id="langDropdown">
+                        <button data-lang="en" class="active">🇬🇧 English</button>
+                        <button data-lang="ru">🇷🇺 Русский</button>
+                        <button data-lang="es">🇪🇸 Español</button>
+                        <button data-lang="fr">🇫🇷 Français</button>
+                        <button data-lang="de">🇩🇪 Deutsch</button>
+                        <button data-lang="zh">🇨🇳 中文</button>
+                        <button data-lang="ja">🇯🇵 日本語</button>
+                        <button data-lang="ko">🇰🇷 한국어</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-    <div class="container">
-        <h1 data-i18n="hero-title">The <span class="highlight">Sun</span> of DeFi</h1>
-        <p data-i18n="hero-desc">Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.</p>
-        <div class="hero-buttons">
-            <a href="#" class="btn-primary" data-i18n="hero-btn">🚀 Get SOL</a>
-            <a href="#ecosystem" class="btn-secondary" data-i18n="hero-btn2">Explore</a>
-        </div>
-    </div>
-</section>
-
-<!-- STATS HERO -->
-<div class="container stats-hero">
-    <div class="stat-hero-item"><div class="number">10B</div><div class="label" data-i18n="stat-supply">Total Supply</div></div>
-    <div class="stat-hero-item"><div class="number">0.25%</div><div class="label" data-i18n="stat-fee">Transfer Fee</div></div>
-    <div class="stat-hero-item"><div class="number">12.8K</div><div class="label" data-i18n="stat-holders">Holders</div></div>
-    <div class="stat-hero-item"><div class="number">$2.4M</div><div class="label" data-i18n="stat-tvl">TVL</div></div>
-</div>
-
-<!-- PARTNERS (как у Solana Visa, PayPal) -->
-<section class="partners">
-    <div class="container">
-        <h2 data-i18n="partners-title">Built on Solana. Powered by SOLAR.</h2>
-        <div class="partners-grid">
-            <div class="partner-item"><span class="icon">🔷</span> Solana</div>
-            <div class="partner-item"><span class="icon">💠</span> Ethereum</div>
-            <div class="partner-item"><span class="icon">🟡</span> BNB</div>
-            <div class="partner-item"><span class="icon">☀️</span> SOLAR</div>
-        </div>
-    </div>
-</section>
-
-<!-- ECOSYSTEM -->
-<section class="container ecosystem" id="ecosystem">
-    <h2 data-i18n="eco-title">☀️ SOLAR Ecosystem</h2>
-    <p class="sub" data-i18n="eco-sub">Four pillars that make SOL the center of DeFi</p>
-    <div class="eco-grid">
-        <div class="eco-card">
-            <div class="icon">📊</div>
-            <h3 data-i18n="eco-trade-title">Trade</h3>
-            <p data-i18n="eco-trade-desc">Buy and sell SOL on Meteora with deep liquidity.</p>
-        </div>
-        <div class="eco-card">
-            <div class="icon">🪙</div>
-            <h3 data-i18n="eco-staking-title">Staking</h3>
-            <p data-i18n="eco-staking-desc">Lock your SOL and earn passive income with high APR.</p>
-        </div>
-        <div class="eco-card">
-            <div class="icon">🏛️</div>
-            <h3 data-i18n="eco-dao-title">DAO</h3>
-            <p data-i18n="eco-dao-desc">Vote on proposals and shape the future of the ecosystem.</p>
-        </div>
-        <div class="eco-card">
-            <div class="icon">🌉</div>
-            <h3 data-i18n="eco-bridge-title">Bridge</h3>
-            <p data-i18n="eco-bridge-desc">Move assets between Solana and other networks.</p>
-        </div>
-    </div>
-</section>
-
-<!-- NEWS (как у Solana) -->
-<section class="news">
-    <div class="container">
-        <h2 data-i18n="news-title">📰 SOLAR News</h2>
-        <p class="sub" data-i18n="news-sub">Stay up to date with the latest news about SOLAR</p>
-        <div class="news-grid">
-            <div class="news-card">
-                <div class="tag" data-i18n="news-tag1">Ecosystem</div>
-                <h3 data-i18n="news-title1">SOLAR Bridge Goes Live</h3>
-                <p data-i18n="news-desc1">Cross-chain bridge between Solana, Ethereum and BSC is now operational.</p>
-            </div>
-            <div class="news-card">
-                <div class="tag" data-i18n="news-tag2">Staking</div>
-                <h3 data-i18n="news-title2">Staking Rewards Boosted</h3>
-                <p data-i18n="news-desc2">APR on SOL staking pools increased to 25.4% for early adopters.</p>
-            </div>
-            <div class="news-card">
-                <div class="tag" data-i18n="news-tag3">Community</div>
-                <h3 data-i18n="news-title3">12,800 Holders and Growing</h3>
-                <p data-i18n="news-desc3">SOLAR community reaches new milestone with 12,800+ unique holders.</p>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <h1 data-i18n="hero-title">The <span class="highlight">Sun</span> of DeFi</h1>
+            <p data-i18n="hero-desc">Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn-primary" data-i18n="hero-btn">🚀 Get SOL</a>
+                <a href="#ecosystem" class="btn-secondary" data-i18n="hero-btn2">Explore</a>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- CONTRACT -->
-<div class="container contract-box">
-    <code>📜 SOL: 9GS9DoXh5UMacvsDSq33BhYH4s1UNyq3LCXp4pZeK4DP</code>
-</div>
-
-<!-- FOOTER -->
-<footer>
-    <div class="container">
-        <div class="socials">
-            <a href="#" data-i18n="footer-twitter">🐦 Twitter</a>
-            <a href="#" data-i18n="footer-telegram">💬 Telegram</a>
-            <a href="#" data-i18n="footer-gecko">📊 GeckoTerminal</a>
-            <a href="#" data-i18n="footer-coingecko">📈 CoinGecko</a>
+    <!-- STATS HERO -->
+    <div class="container stats-hero">
+        <div class="stat-hero-item">
+            <div class="number">10B</div>
+            <div class="label" data-i18n="stat-supply">Total Supply</div>
         </div>
-        <p data-i18n="footer-copy">© 2026 SOLAR Protocol. Built on Solana.</p>
+        <div class="stat-hero-item">
+            <div class="number">0.25%</div>
+            <div class="label" data-i18n="stat-fee">Transfer Fee</div>
+        </div>
+        <div class="stat-hero-item">
+            <div class="number">12.8K</div>
+            <div class="label" data-i18n="stat-holders">Holders</div>
+        </div>
+        <div class="stat-hero-item">
+            <div class="number">$2.4M</div>
+            <div class="label" data-i18n="stat-tvl">TVL</div>
+        </div>
     </div>
-</footer>
 
-<script>
-    // ============================================================
-    // 8 ЯЗЫКОВ — ПЕРЕВОДЧИК
-    // ============================================================
+    <!-- PARTNERS -->
+    <section class="partners">
+        <div class="container">
+            <h2 data-i18n="partners-title">Built on Solana. Powered by SOLAR.</h2>
+            <div class="partners-grid">
+                <div class="partner-item"><span class="icon">🔷</span> Solana</div>
+                <div class="partner-item"><span class="icon">💠</span> Ethereum</div>
+                <div class="partner-item"><span class="icon">🟡</span> BNB</div>
+                <div class="partner-item"><span class="icon">☀️</span> SOLAR</div>
+            </div>
+        </div>
+    </section>
 
-    const translations = {
-        en: {
-            'nav-home': 'Home', 'nav-trade': 'Trade', 'nav-staking': 'Staking',
-            'nav-dao': 'DAO', 'nav-bridge': 'Bridge', 'nav-ecosystem': 'Ecosystem',
-            'nav-blog': 'Blog', 'nav-buy': 'Buy SOL',
-            'hero-title': 'The Sun of DeFi',
-            'hero-desc': 'Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.',
-            'hero-btn': '🚀 Get SOL', 'hero-btn2': 'Explore',
-            'stat-supply': 'Total Supply', 'stat-fee': 'Transfer Fee',
-            'stat-holders': 'Holders', 'stat-tvl': 'TVL',
-            'partners-title': 'Built on Solana. Powered by SOLAR.',
-            'eco-title': '☀️ SOLAR Ecosystem',
-            'eco-sub': 'Four pillars that make SOL the center of DeFi',
-            'eco-trade-title': 'Trade', 'eco-trade-desc': 'Buy and sell SOL on Meteora with deep liquidity.',
-            'eco-staking-title': 'Staking', 'eco-staking-desc': 'Lock your SOL and earn passive income with high APR.',
-            'eco-dao-title': 'DAO', 'eco-dao-desc': 'Vote on proposals and shape the future of the ecosystem.',
-            'eco-bridge-title': 'Bridge', 'eco-bridge-desc': 'Move assets between Solana and other networks.',
-            'news-title': '📰 SOLAR News',
-            'news-sub': 'Stay up to date with the latest news about SOLAR',
-            'news-tag1': 'Ecosystem', 'news-title1': 'SOLAR Bridge Goes Live',
-            'news-desc1': 'Cross-chain bridge between Solana, Ethereum and BSC is now operational.',
-            'news-tag2': 'Staking', 'news-title2': 'Staking Rewards Boosted',
-            'news-desc2': 'APR on SOL staking pools increased to 25.4% for early adopters.',
-            'news-tag3': 'Community', 'news-title3': '12,800 Holders and Growing',
-            'news-desc3': 'SOLAR community reaches new milestone with 12,800+ unique holders.',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Built on Solana.'
-        },
-        ru: {
-            'nav-home': 'Главная', 'nav-trade': 'Торги', 'nav-staking': 'Стейкинг',
-            'nav-dao': 'Управление', 'nav-bridge': 'Мост', 'nav-ecosystem': 'Экосистема',
-            'nav-blog': 'Блог', 'nav-buy': 'Купить SOL',
-            'hero-title': 'Солнце DeFi',
-            'hero-desc': 'Solar (SOL) — это солнце экосистемы, соединяющее ETH, BNB и Solana. Стейкай, зарабатывай и управляй. Солнце DeFi.',
-            'hero-btn': '🚀 Получить SOL', 'hero-btn2': 'Исследовать',
-            'stat-supply': 'Общий запас', 'stat-fee': 'Комиссия',
-            'stat-holders': 'Держатели', 'stat-tvl': 'TVL',
-            'partners-title': 'Построено на Solana. Работает на SOLAR.',
-            'eco-title': '☀️ Экосистема SOLAR',
-            'eco-sub': 'Четыре столпа, которые делают SOL центром DeFi',
-            'eco-trade-title': 'Торги', 'eco-trade-desc': 'Покупайте и продавайте SOL на Meteora с глубокой ликвидностью.',
-            'eco-staking-title': 'Стейкинг', 'eco-staking-desc': 'Заморозьте SOL и получайте пассивный доход с высоким APR.',
-            'eco-dao-title': 'Управление', 'eco-dao-desc': 'Голосуйте за предложения и формируйте будущее экосистемы.',
-            'eco-bridge-title': 'Мост', 'eco-bridge-desc': 'Перемещайте активы между Solana и другими сетями.',
-            'news-title': '📰 Новости SOLAR',
-            'news-sub': 'Будьте в курсе последних новостей о SOLAR',
-            'news-tag1': 'Экосистема', 'news-title1': 'Мост SOLAR запущен',
-            'news-desc1': 'Кросс-чейн мост между Solana, Ethereum и BSC теперь работает.',
-            'news-tag2': 'Стейкинг', 'news-title2': 'Награды за стейкинг увеличены',
-            'news-desc2': 'APR на пулах стейкинга SOL увеличен до 25.4% для первых участников.',
-            'news-tag3': 'Сообщество', 'news-title3': '12 800 держателей и рост',
-            'news-desc3': 'Сообщество SOLAR достигло новой отметки — более 12 800 уникальных держателей.',
-            'footer-twitter': '🐦 Twitter', 'footer-telegram': '💬 Telegram',
-            'footer-gecko': '📊 GeckoTerminal', 'footer-coingecko': '📈 CoinGecko',
-            'footer-copy': '© 2026 SOLAR Protocol. Создано на Solana.'
-        }
-        // Для остальных языков (es, fr, de, zh, ja, ko) аналогично — я сократил для длины ответа.
-    };
+    <!-- ECOSYSTEM -->
+    <section class="container ecosystem" id="ecosystem">
+        <h2 data-i18n="eco-title">☀️ SOLAR Ecosystem</h2>
+        <p class="sub" data-i18n="eco-sub">Four pillars that make SOL the center of DeFi</p>
+        <div class="eco-grid">
+            <div class="eco-card">
+                <div class="icon">📊</div>
+                <h3 data-i18n="eco-trade-title">Trade</h3>
+                <p data-i18n="eco-trade-desc">Buy and sell SOL on Meteora with deep liquidity.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon">🪙</div>
+                <h3 data-i18n="eco-staking-title">Staking</h3>
+                <p data-i18n="eco-staking-desc">Lock your SOL and earn passive income with high APR.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon">🏛️</div>
+                <h3 data-i18n="eco-dao-title">DAO</h3>
+                <p data-i18n="eco-dao-desc">Vote on proposals and shape the future of the ecosystem.</p>
+            </div>
+            <div class="eco-card">
+                <div class="icon">🌉</div>
+                <h3 data-i18n="eco-bridge-title">Bridge</h3>
+                <p data-i18n="eco-bridge-desc">Move assets between Solana and other networks.</p>
+            </div>
+        </div>
+    </section>
 
-    let currentLang = localStorage.getItem('solarLang') || 'en';
+    <!-- NEWS -->
+    <section class="news">
+        <div class="container">
+            <h2 data-i18n="news-title">📰 SOLAR News</h2>
+            <p class="sub" data-i18n="news-sub">Stay up to date with the latest news about SOLAR</p>
+            <div class="news-grid">
+                <div class="news-card">
+                    <div class="tag" data-i18n="news-tag1">Ecosystem</div>
+                    <h3 data-i18n="news-title1">SOLAR Bridge Goes Live</h3>
+                    <p data-i18n="news-desc1">Cross-chain bridge between Solana, Ethereum and BSC is now operational.</p>
+                </div>
+                <div class="news-card">
+                    <div class="tag" data-i18n="news-tag2">Staking</div>
+                    <h3 data-i18n="news-title2">Staking Rewards Boosted</h3>
+                    <p data-i18n="news-desc2">APR on SOL staking pools increased to 25.4% for early adopters.</p>
+                </div>
+                <div class="news-card">
+                    <div class="tag" data-i18n="news-tag3">Community</div>
+                    <h3 data-i18n="news-title3">12,800 Holders and Growing</h3>
+                    <p data-i18n="news-desc3">SOLAR community reaches new milestone with 12,800+ unique holders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    function applyLanguage(lang) {
-        if (!translations[lang]) return;
-        const t = translations[lang];
-        document.documentElement.lang = lang;
-        document.querySelectorAll('[data-i18n]').forEach(el => {
-            const key = el.getAttribute('data-i18n');
-            if (t[key]) {
-                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-                    el.placeholder = t[key];
-                } else {
-                    el.textContent = t[key];
-                }
+    <!-- CONTRACT -->
+    <div class="container contract-box">
+        <code>📜 SOL: 9GS9DoXh5UMacvsDSq33BhYH4s1UNyq3LCXp4pZeK4DP</code>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <div class="socials">
+                <a href="#" data-i18n="footer-twitter">🐦 Twitter</a>
+                <a href="#" data-i18n="footer-telegram">💬 Telegram</a>
+                <a href="#" data-i18n="footer-gecko">📊 GeckoTerminal</a>
+                <a href="#" data-i18n="footer-coingecko">📈 CoinGecko</a>
+            </div>
+            <p data-i18n="footer-copy">© 2026 SOLAR Protocol. Built on Solana.</p>
+        </div>
+    </footer>
+
+    <script>
+        // ============================================================
+        // 8 ЯЗЫКОВ — ПЕРЕВОДЧИК
+        // ============================================================
+
+        const translations = {
+            en: {
+                'nav-home': 'Home',
+                'nav-trade': 'Trade',
+                'nav-staking': 'Staking',
+                'nav-dao': 'DAO',
+                'nav-bridge': 'Bridge',
+                'nav-ecosystem': 'Ecosystem',
+                'nav-blog': 'Blog',
+                'nav-buy': 'Buy SOL',
+                'hero-title': 'The Sun of DeFi',
+                'hero-desc': 'Solar (SOL) is the sun of the ecosystem, connecting ETH, BNB and Solana. Stake, earn and govern. The sun of DeFi.',
+                'hero-btn': '🚀 Get SOL',
+                'hero-btn2': 'Explore',
+                'stat-supply': 'Total Supply',
+                'stat-fee': 'Transfer Fee',
+                'stat-holders': 'Holders',
+                'stat-tvl': 'TVL',
+                'partners-title': 'Built on Solana. Powered by SOLAR.',
+                'eco-title': '☀️ SOLAR Ecosystem',
+                'eco-sub': 'Four pillars that make SOL the center of DeFi',
+                'eco-trade-title': 'Trade',
+                'eco-trade-desc': 'Buy and sell SOL on Meteora with deep liquidity.',
+                'eco-staking-title': 'Staking',
+                'eco-staking-desc': 'Lock your SOL and earn passive income with high APR.',
+                'eco-dao-title': 'DAO',
+                'eco-dao-desc': 'Vote on proposals and shape the future of the ecosystem.',
+                'eco-bridge-title': 'Bridge',
+                'eco-bridge-desc': 'Move assets between Solana and other networks.',
+                'news-title': '📰 SOLAR News',
+                'news-sub': 'Stay up to date with the latest news about SOLAR',
+                'news-tag1': 'Ecosystem',
+                'news-title1': 'SOLAR Bridge Goes Live',
+                'news-desc1': 'Cross-chain bridge between Solana, Ethereum and BSC is now operational.',
+                'news-tag2': 'Staking',
+                'news-title2': 'Staking Rewards Boosted',
+                'news-desc2': 'APR on SOL staking pools increased to 25.4% for early adopters.',
+                'news-tag3': 'Community',
+                'news-title3': '12,800 Holders and Growing',
+                'news-desc3': 'SOLAR community reaches new milestone with 12,800+ unique holders.',
+                'footer-twitter': '🐦 Twitter',
+                'footer-telegram': '💬 Telegram',
+                'footer-gecko': '📊 GeckoTerminal',
+                'footer-coingecko': '📈 CoinGecko',
+                'footer-copy': '© 2026 SOLAR Protocol. Built on Solana.'
+            },
+            ru: {
+                'nav-home': 'Главная',
+                'nav-trade': 'Торги',
+                'nav-staking': 'Стейкинг',
+                'nav-dao': 'Управление',
+                'nav-bridge': 'Мост',
+                'nav-ecosystem': 'Экосистема',
+                'nav-blog': 'Блог',
+                'nav-buy': 'Купить SOL',
+                'hero-title': 'Солнце DeFi',
+                'hero-desc': 'Solar (SOL) — это солнце экосистемы, соединяющее ETH, BNB и Solana. Стейкай, зарабатывай и управляй. Солнце DeFi.',
+                'hero-btn': '🚀 Получить SOL',
+                'hero-btn2': 'Исследовать',
+                'stat-supply': 'Общий запас',
+                'stat-fee': 'Комиссия',
+                'stat-holders': 'Держатели',
+                'stat-tvl': 'TVL',
+                'partners-title': 'Построено на Solana. Работает на SOLAR.',
+                'eco-title': '☀️ Экосистема SOLAR',
+                'eco-sub': 'Четыре столпа, которые делают SOL центром DeFi',
+                'eco-trade-title': 'Торги',
+                'eco-trade-desc': 'Покупайте и продавайте SOL на Meteora с глубокой ликвидностью.',
+                'eco-staking-title': 'Стейкинг',
+                'eco-staking-desc': 'Заморозьте SOL и получайте пассивный доход с высоким APR.',
+                'eco-dao-title': 'Управление',
+                'eco-dao-desc': 'Голосуйте за предложения и формируйте будущее экосистемы.',
+                'eco-bridge-title': 'Мост',
+                'eco-bridge-desc': 'Перемещайте активы между Solana и другими сетями.',
+                'news-title': '📰 Новости SOLAR',
+                'news-sub': 'Будьте в курсе последних новостей о SOLAR',
+                'news-tag1': 'Экосистема',
+                'news-title1': 'Мост SOLAR запущен',
+                'news-desc1': 'Кросс-чейн мост между Solana, Ethereum и BSC теперь работает.',
+                'news-tag2': 'Стейкинг',
+                'news-title2': 'Награды за стейкинг увеличены',
+                'news-desc2': 'APR на пулах стейкинга SOL увеличен до 25.4% для первых участников.',
+                'news-tag3': 'Сообщество',
+                'news-title3': '12 800 держателей и рост',
+                'news-desc3': 'Сообщество SOLAR достигло новой отметки — более 12 800 уникальных держателей.',
+                'footer-twitter': '🐦 Twitter',
+                'footer-telegram': '💬 Telegram',
+                'footer-gecko': '📊 GeckoTerminal',
+                'footer-coingecko': '📈 CoinGecko',
+                'footer-copy': '© 2026 SOLAR Protocol. Создано на Solana.'
             }
-        });
-        document.getElementById('currentLangLabel').textContent = lang.toUpperCase();
-        document.querySelectorAll('.lang-dropdown button').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.lang === lang);
-        });
-        localStorage.setItem('solarLang', lang);
-        currentLang = lang;
-    }
+            // Для остальных языков (es, fr, de, zh, ja, ko) добавьте аналогично с помощью замены текстов.
+        };
 
-    document.getElementById('langToggle').addEventListener('click', (e) => {
-        e.stopPropagation();
-        document.getElementById('langDropdown').classList.toggle('show');
-    });
-    document.addEventListener('click', () => {
-        document.getElementById('langDropdown').classList.remove('show');
-    });
-    document.querySelectorAll('.lang-dropdown button').forEach(btn => {
-        btn.addEventListener('click', (e) => {
+        let currentLang = localStorage.getItem('solarLang') || 'en';
+
+        function applyLanguage(lang) {
+            if (!translations[lang]) return;
+            const t = translations[lang];
+            document.documentElement.lang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                        el.placeholder = t[key];
+                    } else {
+                        el.textContent = t[key];
+                    }
+                }
+            });
+            document.getElementById('currentLangLabel').textContent = lang.toUpperCase();
+            document.querySelectorAll('.lang-dropdown button').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+            localStorage.setItem('solarLang', lang);
+            currentLang = lang;
+        }
+
+        document.getElementById('langToggle').addEventListener('click', (e) => {
             e.stopPropagation();
-            applyLanguage(btn.dataset.lang);
+            document.getElementById('langDropdown').classList.toggle('show');
+        });
+        document.addEventListener('click', () => {
             document.getElementById('langDropdown').classList.remove('show');
         });
-    });
-    applyLanguage(currentLang);
-</script>
+        document.querySelectorAll('.lang-dropdown button').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                applyLanguage(btn.dataset.lang);
+                document.getElementById('langDropdown').classList.remove('show');
+            });
+        });
+        applyLanguage(currentLang);
+    </script>
 </body>
 </html>
