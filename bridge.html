@@ -151,6 +151,74 @@
             margin-top: 10px;
         }
 
+        /* ——— BUY WITH CARD ——— */
+        .buy-section {
+            padding: 40px 0 20px;
+            border-top: 1px solid rgba(255,255,255,0.04);
+        }
+        .buy-section h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+            color: #fff;
+            text-align: center;
+        }
+        .buy-section .sub {
+            text-align: center;
+            color: #8892b0;
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1rem;
+        }
+        .buy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 12px;
+            padding-bottom: 20px;
+        }
+        .buy-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.04);
+            border-radius: 14px;
+            padding: 16px;
+            text-align: center;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .buy-card:hover {
+            border-color: #00d4ff;
+            transform: translateY(-4px);
+            background: rgba(0,212,255,0.04);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+        .buy-card .icon {
+            font-size: 2rem;
+            margin-bottom: 6px;
+        }
+        .buy-card .provider {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .buy-card .currency {
+            font-size: 0.75rem;
+            color: #8892b0;
+            margin: 4px 0;
+        }
+        .buy-card .badge {
+            font-size: 0.6rem;
+            background: rgba(20,241,149,0.1);
+            color: #14f195;
+            padding: 2px 10px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-top: 4px;
+        }
+        .buy-card .badge.soon {
+            background: rgba(255,215,0,0.1);
+            color: #ffd700;
+        }
+
         .section-title {
             font-size: 1.2rem;
             font-weight: 700;
@@ -195,6 +263,7 @@
             .nav-links { justify-content: center; }
             .page-header h1 { font-size: 1.8rem; }
             .bridge-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+            .buy-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
             .page-banner { max-height: 200px; }
         }
     </style>
@@ -236,11 +305,12 @@
 <div class="container">
     <div class="page-header">
         <h1>🌉 <span data-i18n="page-title">Cross-Chain Bridge</span></h1>
-        <p data-i18n="page-desc">Move assets between Solana and other networks</p>
+        <p data-i18n="page-desc">Move assets between Solana and other networks. Buy crypto with your card.</p>
     </div>
 
     <img src="https://raw.githubusercontent.com/eximtrustoilbank-sudo/sol/main/sol_bridge.jpg" alt="SOLAR Bridge" class="page-banner">
 
+    <!-- BRIDGE WIDGET -->
     <div class="bridge-widget">
         <div class="row"><span data-i18n="bridge-from">From</span><span data-i18n="bridge-balance">Balance: 12,450 SOL</span></div>
         <div class="input-box">
@@ -257,6 +327,161 @@
         <div class="bridge-info"><span data-i18n="bridge-time">Time: ~2-5 min</span><span data-i18n="bridge-fee">Fee: 0.5%</span></div>
     </div>
 
+    <!-- ============================================================ -->
+    <!-- BUY CRYPTO WITH CARD — ФИАТНЫЕ ВАЛЮТЫ И КОМПАНИИ              -->
+    <!-- ============================================================ -->
+    <section class="buy-section" id="buy-crypto">
+        <h2 data-i18n="buy-title">💳 Buy SOL with Card</h2>
+        <p class="sub" data-i18n="buy-sub">Purchase SOL directly using your credit or debit card. Multiple currencies and providers available.</p>
+
+        <!-- USD Providers -->
+        <div class="section-title" data-i18n="buy-usd-title">🇺🇸 USD</div>
+        <div class="buy-grid">
+            <a href="https://www.moonpay.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🌙</div>
+                <div class="provider">MoonPay</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://transak.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🔄</div>
+                <div class="provider">Transak</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.ramp.net/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🟣</div>
+                <div class="provider">Ramp</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://guardarian.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🛡️</div>
+                <div class="provider">Guardarian</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.mercuryo.io/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">💎</div>
+                <div class="provider">Mercuryo</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.bitrefill.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">⛽</div>
+                <div class="provider">Bitrefill</div>
+                <div class="currency">USD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+        </div>
+
+        <!-- EUR Providers -->
+        <div class="section-title" data-i18n="buy-eur-title">🇪🇺 EUR</div>
+        <div class="buy-grid">
+            <a href="https://www.moonpay.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🌙</div>
+                <div class="provider">MoonPay</div>
+                <div class="currency">EUR • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://transak.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🔄</div>
+                <div class="provider">Transak</div>
+                <div class="currency">EUR • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.ramp.net/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🟣</div>
+                <div class="provider">Ramp</div>
+                <div class="currency">EUR • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.banxa.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🏦</div>
+                <div class="provider">Banxa</div>
+                <div class="currency">EUR • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://guardarian.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🛡️</div>
+                <div class="provider">Guardarian</div>
+                <div class="currency">EUR • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+        </div>
+
+        <!-- GBP Providers -->
+        <div class="section-title" data-i18n="buy-gbp-title">🇬🇧 GBP</div>
+        <div class="buy-grid">
+            <a href="https://www.moonpay.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🌙</div>
+                <div class="provider">MoonPay</div>
+                <div class="currency">GBP • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://transak.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🔄</div>
+                <div class="provider">Transak</div>
+                <div class="currency">GBP • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://guardarian.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🛡️</div>
+                <div class="provider">Guardarian</div>
+                <div class="currency">GBP • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.bitrefill.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">⛽</div>
+                <div class="provider">Bitrefill</div>
+                <div class="currency">GBP • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+        </div>
+
+        <!-- Other Currencies -->
+        <div class="section-title" data-i18n="buy-other-title">🌍 Other Currencies</div>
+        <div class="buy-grid">
+            <a href="https://www.moonpay.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🌙</div>
+                <div class="provider">MoonPay</div>
+                <div class="currency">JPY • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://transak.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🔄</div>
+                <div class="provider">Transak</div>
+                <div class="currency">AUD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.ramp.net/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🟣</div>
+                <div class="provider">Ramp</div>
+                <div class="currency">CAD • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://www.banxa.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🏦</div>
+                <div class="provider">Banxa</div>
+                <div class="currency">CHF • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+            <a href="https://guardarian.com/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">🛡️</div>
+                <div class="provider">Guardarian</div>
+                <div class="currency">INR • SOL</div>
+                <div class="badge">⏳ Soon</div>
+            </a>
+            <a href="https://www.mercuryo.io/buy/solana" target="_blank" class="buy-card">
+                <div class="icon">💎</div>
+                <div class="provider">Mercuryo</div>
+                <div class="currency">UAH • SOL</div>
+                <div class="badge">✅ Live</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- AVAILABLE BRIDGES -->
     <div class="section-title" data-i18n="section1">🔗 Available Bridges</div>
     <div class="bridge-grid">
         <a href="https://wormhole.com/" target="_blank" class="bridge-card"><span class="icon">🌉</span> Wormhole</a>
@@ -289,17 +514,26 @@
 </footer>
 
 <script>
-    // ——— ПЕРЕВОДЧИК (8 ЯЗЫКОВ) ———
+    // ============================================================
+    // 8 ЯЗЫКОВ — ПЕРЕВОДЧИК
+    // ============================================================
+
     const translations = {
         en: {
             'nav-home': 'Home', 'nav-trade': 'Trade', 'nav-staking': 'Staking',
             'nav-dao': 'DAO', 'nav-bridge': 'Bridge', 'nav-ecosystem': 'Ecosystem',
             'nav-blog': 'Blog', 'nav-buy': 'Buy SOL',
-            'page-title': 'Cross-Chain Bridge', 'page-desc': 'Move assets between Solana and other networks',
+            'page-title': 'Cross-Chain Bridge', 'page-desc': 'Move assets between Solana and other networks. Buy crypto with your card.',
             'bridge-from': 'From', 'bridge-balance': 'Balance: 12,450 SOL',
             'bridge-to': 'To', 'bridge-balance2': 'Balance: 0.00 SOL',
             'bridge-btn': '🚀 Bridge SOL',
             'bridge-time': 'Time: ~2-5 min', 'bridge-fee': 'Fee: 0.5%',
+            'buy-title': '💳 Buy SOL with Card',
+            'buy-sub': 'Purchase SOL directly using your credit or debit card. Multiple currencies and providers available.',
+            'buy-usd-title': '🇺🇸 USD',
+            'buy-eur-title': '🇪🇺 EUR',
+            'buy-gbp-title': '🇬🇧 GBP',
+            'buy-other-title': '🌍 Other Currencies',
             'section1': '🔗 Available Bridges',
             'footer-copy': '© 2026 SOLAR Protocol — Bridge between worlds'
         },
@@ -307,14 +541,75 @@
             'nav-home': 'Главная', 'nav-trade': 'Торги', 'nav-staking': 'Стейкинг',
             'nav-dao': 'Управление', 'nav-bridge': 'Мост', 'nav-ecosystem': 'Экосистема',
             'nav-blog': 'Блог', 'nav-buy': 'Купить SOL',
-            'page-title': 'Кросс-чейн мост', 'page-desc': 'Перемещайте активы между Solana и другими сетями',
+            'page-title': 'Кросс-чейн мост', 'page-desc': 'Перемещайте активы между Solana и другими сетями. Покупайте криптовалюту с карты.',
             'bridge-from': 'Откуда', 'bridge-balance': 'Баланс: 12,450 SOL',
             'bridge-to': 'Куда', 'bridge-balance2': 'Баланс: 0.00 SOL',
             'bridge-btn': '🚀 Переместить SOL',
             'bridge-time': 'Время: ~2-5 мин', 'bridge-fee': 'Комиссия: 0.5%',
+            'buy-title': '💳 Купить SOL с карты',
+            'buy-sub': 'Покупайте SOL напрямую с кредитной или дебетовой карты. Доступно множество валют и провайдеров.',
+            'buy-usd-title': '🇺🇸 USD',
+            'buy-eur-title': '🇪🇺 EUR',
+            'buy-gbp-title': '🇬🇧 GBP',
+            'buy-other-title': '🌍 Другие валюты',
             'section1': '🔗 Доступные мосты',
             'footer-copy': '© 2026 SOLAR Protocol — Мост между мирами'
+        },
+        es: {
+            'nav-home': 'Inicio', 'nav-trade': 'Comerciar', 'nav-staking': 'Staking',
+            'nav-dao': 'DAO', 'nav-bridge': 'Puente', 'nav-ecosystem': 'Ecosistema',
+            'nav-blog': 'Blog', 'nav-buy': 'Comprar SOL',
+            'page-title': 'Puente Cross-Chain', 'page-desc': 'Mueve activos entre Solana y otras redes. Compra cripto con tu tarjeta.',
+            'bridge-from': 'De', 'bridge-balance': 'Saldo: 12,450 SOL',
+            'bridge-to': 'A', 'bridge-balance2': 'Saldo: 0.00 SOL',
+            'bridge-btn': '🚀 Puentear SOL',
+            'bridge-time': 'Tiempo: ~2-5 min', 'bridge-fee': 'Comisión: 0.5%',
+            'buy-title': '💳 Compra SOL con tarjeta',
+            'buy-sub': 'Compra SOL directamente con tu tarjeta de crédito o débito. Múltiples monedas y proveedores.',
+            'buy-usd-title': '🇺🇸 USD',
+            'buy-eur-title': '🇪🇺 EUR',
+            'buy-gbp-title': '🇬🇧 GBP',
+            'buy-other-title': '🌍 Otras monedas',
+            'section1': '🔗 Puentes Disponibles',
+            'footer-copy': '© 2026 SOLAR Protocol — Puente entre mundos'
+        },
+        fr: {
+            'nav-home': 'Accueil', 'nav-trade': 'Échanger', 'nav-staking': 'Staking',
+            'nav-dao': 'DAO', 'nav-bridge': 'Pont', 'nav-ecosystem': 'Écosystème',
+            'nav-blog': 'Blog', 'nav-buy': 'Acheter SOL',
+            'page-title': 'Pont Cross-Chain', 'page-desc': 'Déplacez des actifs entre Solana et d\'autres réseaux. Achetez de la crypto avec votre carte.',
+            'bridge-from': 'De', 'bridge-balance': 'Solde: 12,450 SOL',
+            'bridge-to': 'À', 'bridge-balance2': 'Solde: 0.00 SOL',
+            'bridge-btn': '🚀 Pont SOL',
+            'bridge-time': 'Temps: ~2-5 min', 'bridge-fee': 'Frais: 0.5%',
+            'buy-title': '💳 Acheter SOL avec carte',
+            'buy-sub': 'Achetez SOL directement avec votre carte de crédit ou débit. Plusieurs devises et fournisseurs.',
+            'buy-usd-title': '🇺🇸 USD',
+            'buy-eur-title': '🇪🇺 EUR',
+            'buy-gbp-title': '🇬🇧 GBP',
+            'buy-other-title': '🌍 Autres devises',
+            'section1': '🔗 Ponts Disponibles',
+            'footer-copy': '© 2026 SOLAR Protocol — Pont entre les mondes'
+        },
+        de: {
+            'nav-home': 'Startseite', 'nav-trade': 'Handeln', 'nav-staking': 'Staking',
+            'nav-dao': 'DAO', 'nav-bridge': 'Brücke', 'nav-ecosystem': 'Ökosystem',
+            'nav-blog': 'Blog', 'nav-buy': 'SOL kaufen',
+            'page-title': 'Cross-Chain Brücke', 'page-desc': 'Bewege Vermögenswerte zwischen Solana und anderen Netzwerken. Kaufe Krypto mit deiner Karte.',
+            'bridge-from': 'Von', 'bridge-balance': 'Saldo: 12,450 SOL',
+            'bridge-to': 'Nach', 'bridge-balance2': 'Saldo: 0.00 SOL',
+            'bridge-btn': '🚀 SOL Brücke',
+            'bridge-time': 'Zeit: ~2-5 min', 'bridge-fee': 'Gebühr: 0.5%',
+            'buy-title': '💳 SOL mit Karte kaufen',
+            'buy-sub': 'Kaufe SOL direkt mit deiner Kredit- oder Debitkarte. Mehrere Währungen und Anbieter.',
+            'buy-usd-title': '🇺🇸 USD',
+            'buy-eur-title': '🇪🇺 EUR',
+            'buy-gbp-title': '🇬🇧 GBP',
+            'buy-other-title': '🌍 Andere Währungen',
+            'section1': '🔗 Verfügbare Brücken',
+            'footer-copy': '© 2026 SOLAR Protocol — Brücke zwischen Welten'
         }
+        // Добавьте zh, ja, ko по аналогии
     };
 
     let currentLang = localStorage.getItem('solarLang') || 'en';
